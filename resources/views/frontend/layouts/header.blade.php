@@ -40,11 +40,11 @@
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     <df-messenger intent="WELCOME" chat-title="TS~Bot🤖" agent-id="b2e19dfa-a91a-41a6-b95c-df77b673663c"
         language-code="en"></df-messenger>
-    
+
 </head>
 
 <body>
-    
+
     <header id="header" class="header-v3">
         <div class="info-head">
             <div class="container">
@@ -297,52 +297,10 @@
                                     Sindhi</option>
                                 <option data-content='<span class="flag-icon flag-icon-si"></span> Sinhala (Sinhalese)'
                                     value="Sinhala (Sinhalese)">Sinhala (Sinhalese)</option>
-                                <option data-content='<span class="flag-icon flag-icon-sk"></span> Slovak'
-                                    value="Slovak">
-                                    Slovak</option>
-                                <option data-content='<span class="flag-icon flag-icon-sl"></span> Slovenian'
-                                    value="Slovenian">Slovenian</option>
-                                <option data-content='<span class="flag-icon flag-icon-so"></span> Somali'
-                                    value="Somali">
-                                    Somali</option>
-                                <option data-content='<span class="flag-icon flag-icon-es"></span> Spanish'
-                                    value="Spanish">
-                                    Spanish</option>
-                                <option data-content='<span class="flag-icon flag-icon-sv"></span> Swedish'
-                                    value="Swedish">Swedish</option>
-                                <option data-content='<span class="flag-icon flag-icon-tl"></span> Tagalog (Filipino)'
-                                    value="Tagalog (Filipino)">Tagalog (Filipino)</option>
-                                <option data-content='<span class="flag-icon flag-icon-tg"></span> Tajik'
-                                    value="Tajik">
-                                    Tajik</option>
-                                <option data-content='<span class="flag-icon flag-icon-tt"></span> Tatar'
-                                    value="Tatar">
-                                    Tatar</option>
-                                <option data-content='<span class="flag-icon flag-icon-th"></span> Thai' value="Thai">
-                                    Thai</option>
-                                <option data-content='<span class="flag-icon flag-icon-tr"></span> Turkish'
-                                    value="Turkish">Turkish</option>
-                                <option data-content='<span class="flag-icon flag-icon-tk"></span> Turkmen'
-                                    value="Turkmen">Turkmen</option>
-                                <option data-content='<span class="flag-icon flag-icon-ua"></span> Ukrainian'
-                                    value="Ukrainian">Ukrainian</option>
-                                <option data-content='<span class="flag-icon flag-icon-ug"></span> Uyghur'
-                                    value="Uyghur">
-                                    Uyghur</option>
-                                <option data-content='<span class="flag-icon flag-icon-uz"></span> Uzbek'
-                                    value="Uzbek">
-                                    Uzbek</option>
-                                <option data-content='<span class="flag-icon flag-icon-vi"></span> Vietnamese'
-                                    value="Vietnamese">Vietnamese</option>
-                                <option data-content='<span class="flag-icon flag-icon-cy"></span> Welsh'
-                                    value="Welsh">
-                                    Welsh</option>
-                                <option data-content='<span class="flag-icon flag-icon-zw"></span> Xhosa'
-                                    value="Xhosa">
-                                    Xhosa</option>
+
                             </select>
                         </div>
-                    </center>  
+                    </center>
                 </li>
                 @if (Route::has('login'))
                     @auth
@@ -380,7 +338,7 @@
                                     <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li>
                                     <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                                    document.getElementById('logout-form').submit();">Logout</a>
+                                                                        document.getElementById('logout-form').submit();">Logout</a>
                                     </li>
                                 </ul>
                             </li>
@@ -403,8 +361,8 @@
         {{-- <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div> --}}
 
         <!--
-         Start Preloader
-         ==================================== -->
+             Start Preloader
+             ==================================== -->
         <div class="preloader">
             <div class="sk-cube-grid">
                 <div class="sk-cube sk-cube1"></div>
@@ -419,4 +377,4 @@
             </div>
         </div>
         <!-- End Preloader
-                ==================================== -->
+                    ==================================== -->
