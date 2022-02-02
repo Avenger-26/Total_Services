@@ -79,13 +79,15 @@
 
 </style>
 
+
+
 <div data-active-color="white" data-background-color="black"
     data-image="{{ asset('app-assets/img/sidebar-bg/01.jpg') }}" class="app-sidebar">
     <!-- main menu header-->
     <!-- Sidebar Header starts-->
     <div class="sidebar-header">
         <div class="logo clearfix"><a href="/" class="logo-text float-left">
-                <div class="logo-img ">TS</div> 
+                <div class="logo-img ">TS</div>
                 {{-- <span class="text align-left">Total Services</span> --}}
             </a>
             <a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i

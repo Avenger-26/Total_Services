@@ -67,7 +67,7 @@ body {
 /* base buttons  */
 
 .btn-hover {
-    
+
     font-size: 16px;
     font-weight: 600;
     color: #fff;
@@ -47834,7 +47834,7 @@ datetime .form-group {
 
 #user-profile .profile-with-cover .profil-cover-details .profile-image img.img-border {
   border: 5px solid #fff;
-  
+
 }
 
 #user-profile .profile-with-cover .profile-cover-buttons {
@@ -49806,9 +49806,9 @@ body.layout-dark .ngb-dp-weekdays {
   background: #35364b !important;
 }
 
-body.layout-dark svg {
+/* body.layout-dark svg {
   stroke: #fff !important;
-}
+} */
 
 body.layout-dark .ct-grid {
   stroke: #ffffff38;

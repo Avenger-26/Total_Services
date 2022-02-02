@@ -18,7 +18,7 @@
         <div class="container">
             <div class="row" style="margin-top: -30px;">
                 <div class="titles" style="padding-bottom:10px;">
-                    <h2 class="head-title hh-secondary head-primary">Service Categories</h2>
+                    <h2 class="head-title hh-secondary head-primary" data-aos="zoom-in">Service Categories</h2>
                 </div>
             </div>
         </div>
@@ -31,10 +31,10 @@
                                 <div class="item-service-line shadow-lg">
                                     <i class="fa"><a
                                             href="{{ route('home.services_by_category', ['category_slug' => $scategory->slug]) }}"><img
-                                                class="icon-img" height="80px" width="80px"
+                                                class="icon-img" height="80px" width="80px" data-aos="zoom-in"
                                                 src="{{ asset('images/services-categories') }}/{{ $scategory->image }}"
                                                 alt="{{ $scategory->name }}"></a></i>
-                                    <h5>{{ $scategory->name }}</h5>
+                                    <h5 data-aos="zoom-in">{{ $scategory->name }}</h5>
                                 </div>
                             </li>
                         @endforeach

@@ -3,7 +3,7 @@
     style="margin-top:5rem; padding-top:3rem;">
     <div class="container" style="padding-top: 3rem; paddin-bottom:3rem;">
         <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6" data-aos="fade-down">
                 <h4 class="footer-title ff-secondary text-start footer-primary " style="margin-bottom: 1.5rem;">Home
                     Needs</h4>
                 <a class="btn btn-link" href="http://localhost:8000/Electronic/services">Electronic</a>
@@ -12,7 +12,7 @@
                 <a class="btn btn-link" href="http://localhost:8000/Plumber/services">Plumber</a>
                 <a class="btn btn-link" href="http://localhost:8000/Painter/services">Painter</a>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6" data-aos="fade-down">
                 <h4 class="footer-title ff-secondary text-start footer-primary " style="margin-bottom: 1.5rem;">
                     Appliance</h4>
                 <a class="btn btn-link" href="">TV Services</a>
@@ -21,21 +21,21 @@
                 <a class="btn btn-link" href="">Water Purifier</a>
                 <a class="btn btn-link" href="">Microwave Oven</a>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6" data-aos="fade-down">
                 <h4 class="footer-title ff-secondary text-start footer-primary " style="margin-bottom: 1.5rem;">
                     Ac-Services</h4>
-                <a class="btn btn-link" href="http://localhost:8000/home-appliances/services">Iinstallation</a>
+                <a class="btn btn-link" href="http://localhost:8000/home-appliances/services">Installation</a>
                 <a class="btn btn-link" href="http://localhost:8000/home-appliances/services">Uninstallation</a>
                 <a class="btn btn-link" href="http://localhost:8000/home-appliances/services">Gas Refill</a>
                 <a class="btn btn-link" href="http://localhost:8000/home-appliances/services">Wet Servicing</a>
                 <a class="btn btn-link" href="http://localhost:8000/home-appliances/services">Dry Service</a>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6" data-aos="fade-down">
                 <h4 class="footer-title ff-secondary text-start footer-primary fw-normal">Contact</h4>
                 <p class="mb-2" style="color:#fff;"><i class="fa fa-map-marker-alt "
                         style="margin-right:1rem;"></i>Lucknow , Uttar Pradesh, India</p>
                 <p class="mb-2" style="color:#fff;"><i class="fa fa-phone-alt "
-                        style="margin-right:1rem;"></i>+91-1234567890</p>
+                        style="margin-right:1rem;"></i>+91-7071967998</p>
                 <p class="mb-2" style="color:#fff;"><i class="fa fa-envelope "
                         style="margin-right:1rem;"></i>contact@totalservices.in</p>
                 <div style="padding-top: 0.5rem; display:flex; margin-bottom:1rem;">
@@ -54,7 +54,7 @@
                     <div class="footer-menu">
                         <a href="/">Home</a>
                         <a href="{{ route('home.contact') }}">Contact Us</a>
-                        <a href="">FQAs</a>
+
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0" style="color: #fff">
