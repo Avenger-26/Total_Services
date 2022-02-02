@@ -18,13 +18,19 @@ class AdminDashboardComponent extends Component
 
     public function render()
     {
-        $totalServiceProvider = User::where('u_type', 'SPV')->count();
+        $totalServiceProvider = User::where('u_type', 'SPV')->paginate(5)->count();
         $totalUser = User::where('u_type', 'CST')->count();
         $totalServiceCategories = ServiceCategory::count();
         $totalAmount = Paytm::all()->sum('price');
         $total = ($totalAmount * 10) / 100;
         $users = User::where('u_type', 'CST')->paginate(5);
         $sproviders = User::where('u_type', 'SPV')->paginate(5);
+        $new_users = User::select(\DB::raw("COUNT(*) as count"))
+            ->whereYear('created_at', date('Y'))
+            ->groupBy(\DB::raw("Month(created_at)"))
+            ->pluck('count');
+
+
 
         $result = DB::select(DB::raw("select count(*) as total_user, u_type from users group by u_type"));
         $chartData = "";
@@ -35,6 +41,11 @@ class AdminDashboardComponent extends Component
         }
 
         $arr = rtrim($chartData, ",");
-        return view('livewire.admin.admin-dashboard-component', ['totalServiceProvider' => $totalServiceProvider, 'totalUser' => $totalUser, 'totalServiceCategories' => $totalServiceCategories, 'total' => $total, 'chartData' => $arr, 'sproviders' => $sproviders, 'users' => $users])->layout('FrontEnd.layouts.guest');
+        $contacts = Contact::paginate(5);
+        return view(
+            'livewire.admin.admin-dashboard-component',
+            ['totalServiceProvider' => $totalServiceProvider, 'totalUser' => $totalUser, 'totalServiceCategories' => $totalServiceCategories, 'total' => $total, 'chartData' => $arr, 'sproviders' => $sproviders, 'contacts' => $contacts, 'users' => $users],
+            compact('new_users')
+        )->layout('FrontEnd.layouts.guest');
     }
 }
