@@ -10,9 +10,11 @@
     <meta name="author" content="">
     <meta name="viewport" content="width-device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url('assets/css/chblue.css') }}" rel="stylesheet" media="screen">
+    {{-- animate-on-scroll --}}
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Slick -->
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/slick.css') }}" />
     <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}" />
@@ -20,9 +22,9 @@
 
     <link href="{{ url('assets/css/theme-responsive.css') }}" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    {{-- <link href="{{ url('assets/css/dtb/jquery.dataTables.min.css') }}" rel="stylesheet" media="screen"> --}}
+
     <link href="{{ url('assets/css/select2.min.css') }}" rel="stylesheet" media="screen">
-    {{-- <link href="{{ url('assets/css/toastr.min.css') }}" rel="stylesheet" media="screen"> --}}
+
     <link href="{{ url('assets/css/custom_css.css') }}" rel="stylesheet" media="screen">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -34,24 +36,23 @@
 
     <script type="text/javascript" src="{{ url('assets/js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ url('assets/js/jquery-ui.1.10.4.min.js') }}"></script>
-    {{-- <script type="text/javascript" src="{{ url('assets/js/toastr.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url('assets/js/modernizr.js') }}"></script> --}}
+
 
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     <df-messenger intent="WELCOME" chat-title="TS~Bot🤖" agent-id="b2e19dfa-a91a-41a6-b95c-df77b673663c"
         language-code="en"></df-messenger>
-    
+
 </head>
 
 <body>
-    
+
     <header id="header" class="header-v3">
         <div class="info-head">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="visible-md visible-lg text-left">
-                            <li><a href="tel:+911234567890"><i class="fa fa-phone"></i> +91-1234567890</a></li>
+                            <li><a href="tel:+917071967998"><i class="fa fa-phone"></i> +91-7071967998</a></li>
                             <li><a href="mailto:contact@surfsidemedia.in"><i class="fa fa-envelope"></i>
                                     contact@totalservices.in</a></li>
                         </ul>
@@ -220,129 +221,11 @@
                                 <option data-content='<span class="flag-icon flag-icon-kn"></span> Kannada'
                                     value="Kannada">
                                     Kannada</option>
-                                <option data-content='<span class="flag-icon flag-icon-kz"></span> Kazakh'
-                                    value="Kazakh">
-                                    Kazakh</option>
-                                <option data-content='<span class="flag-icon flag-icon-km"></span> Khmer' value="Khmer">
-                                    Khmer</option>
-                                <option data-content='<span class="flag-icon flag-icon-rw"></span> Kinyarwanda'
-                                    value="Kinyarwanda">Kinyarwanda</option>
-                                <option data-content='<span class="flag-icon flag-icon-kr"></span> Korean'
-                                    value="Korean">
-                                    Korean</option>
-                                <option data-content='<span class="flag-icon flag-icon-ir"></span> Kurdish'
-                                    value="Kurdish (Kurmanji)">Kurdish</option>
-                                <option data-content='<span class="flag-icon flag-icon-ky"></span> Kyrgyz'
-                                    value="Kyrgyz">
-                                    Kyrgyz</option>
-                                <option data-content='<span class="flag-icon flag-icon-la"></span> Lao' value="Lao">Lao
-                                </option>
-                                <option data-content='<span class="flag-icon flag-icon-lv"></span> Latvian'
-                                    value="Latvian">
-                                    Latvian</option>
-                                <option data-content='<span class="flag-icon flag-icon-lt"></span> Lithuanian'
-                                    value="Lithuanian">Lithuanian</option>
-                                <option data-content='<span class="flag-icon flag-icon-lb"></span> Luxembourgish'
-                                    value="Luxembourgish">Luxembourgish</option>
-                                <option data-content='<span class="flag-icon flag-icon-mk"></span> Macedonian'
-                                    value="Macedonian">Macedonian</option>
-                                <option data-content='<span class="flag-icon flag-icon-mg"></span> Malagasy'
-                                    value="Malagasy">Malagasy</option>
-                                <option data-content='<span class="flag-icon flag-icon-ms"></span> Malay' value="Malay">
-                                    Malay</option>
 
-                                <option data-content='<span class="flag-icon flag-icon-mt"></span> Maltese'
-                                    value="Maltese">
-                                    Maltese</option>
 
-                                <option data-content='<span class="flag-icon flag-icon-mn"></span> Mongolian'
-                                    value="Mongolian">Mongolian</option>
-                                <option data-content='<span class="flag-icon flag-icon-my"></span> Myanmar (Burmese)'
-                                    value="Myanmar (Burmese)">Myanmar (Burmese)</option>
-
-                                <option data-content='<span class="flag-icon flag-icon-no"></span> Norwegian'
-                                    value="Norwegian">Norwegian</option>
-                                <option data-content='<span class="flag-icon flag-icon-mw"></span> Nyanja (Chichewa)'
-                                    value="Nyanja (Chichewa)">Nyanja (Chichewa)</option>
-                                <option data-content='<span class="flag-icon flag-icon-ps"></span> Pashto'
-                                    value="Pashto">
-                                    Pashto</option>
-                                <option data-content='<span class="flag-icon flag-icon-pl"></span> Polish'
-                                    value="Polish">
-                                    Polish</option>
-                                <option
-                                    data-content='<span class="flag-icon flag-icon-pt"></span> Portuguese (Portugal, Brazil)'
-                                    value="Portuguese (Portugal, Brazil)">Portuguese (Portugal, Brazil)</option>
-
-                                <option data-content='<span class="flag-icon flag-icon-ro"></span> Romanian'
-                                    value="Romanian">Romanian</option>
-                                <option data-content='<span class="flag-icon flag-icon-ru"></span> Russian'
-                                    value="Russian">
-                                    Russian</option>
-                                <option data-content='<span class="flag-icon flag-icon-sm"></span> Samoan'
-                                    value="Samoan">
-                                    Samoan</option>
-                                <option data-content='<span class="flag-icon flag-icon-gd"></span> Scots Gaelic'
-                                    value="Scots Gaelic">Scots Gaelic</option>
-                                <option data-content='<span class="flag-icon flag-icon-sr"></span> Serbian'
-                                    value="Serbian">
-                                    Serbian</option>
-                                <option data-content='<span class="flag-icon flag-icon-st"></span> Sesotho'
-                                    value="Sesotho">
-                                    Sesotho</option>
-                                <option data-content='<span class="flag-icon flag-icon-sn"></span> Shona' value="Shona">
-                                    Shona</option>
-                                <option data-content='<span class="flag-icon flag-icon-sd"></span> Sindhi'
-                                    value="Sindhi">
-                                    Sindhi</option>
-                                <option data-content='<span class="flag-icon flag-icon-si"></span> Sinhala (Sinhalese)'
-                                    value="Sinhala (Sinhalese)">Sinhala (Sinhalese)</option>
-                                <option data-content='<span class="flag-icon flag-icon-sk"></span> Slovak'
-                                    value="Slovak">
-                                    Slovak</option>
-                                <option data-content='<span class="flag-icon flag-icon-sl"></span> Slovenian'
-                                    value="Slovenian">Slovenian</option>
-                                <option data-content='<span class="flag-icon flag-icon-so"></span> Somali'
-                                    value="Somali">
-                                    Somali</option>
-                                <option data-content='<span class="flag-icon flag-icon-es"></span> Spanish'
-                                    value="Spanish">
-                                    Spanish</option>
-                                <option data-content='<span class="flag-icon flag-icon-sv"></span> Swedish'
-                                    value="Swedish">Swedish</option>
-                                <option data-content='<span class="flag-icon flag-icon-tl"></span> Tagalog (Filipino)'
-                                    value="Tagalog (Filipino)">Tagalog (Filipino)</option>
-                                <option data-content='<span class="flag-icon flag-icon-tg"></span> Tajik'
-                                    value="Tajik">
-                                    Tajik</option>
-                                <option data-content='<span class="flag-icon flag-icon-tt"></span> Tatar'
-                                    value="Tatar">
-                                    Tatar</option>
-                                <option data-content='<span class="flag-icon flag-icon-th"></span> Thai' value="Thai">
-                                    Thai</option>
-                                <option data-content='<span class="flag-icon flag-icon-tr"></span> Turkish'
-                                    value="Turkish">Turkish</option>
-                                <option data-content='<span class="flag-icon flag-icon-tk"></span> Turkmen'
-                                    value="Turkmen">Turkmen</option>
-                                <option data-content='<span class="flag-icon flag-icon-ua"></span> Ukrainian'
-                                    value="Ukrainian">Ukrainian</option>
-                                <option data-content='<span class="flag-icon flag-icon-ug"></span> Uyghur'
-                                    value="Uyghur">
-                                    Uyghur</option>
-                                <option data-content='<span class="flag-icon flag-icon-uz"></span> Uzbek'
-                                    value="Uzbek">
-                                    Uzbek</option>
-                                <option data-content='<span class="flag-icon flag-icon-vi"></span> Vietnamese'
-                                    value="Vietnamese">Vietnamese</option>
-                                <option data-content='<span class="flag-icon flag-icon-cy"></span> Welsh'
-                                    value="Welsh">
-                                    Welsh</option>
-                                <option data-content='<span class="flag-icon flag-icon-zw"></span> Xhosa'
-                                    value="Xhosa">
-                                    Xhosa</option>
                             </select>
                         </div>
-                    </center>  
+                    </center>
                 </li>
                 @if (Route::has('login'))
                     @auth
@@ -380,7 +263,7 @@
                                     <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li>
                                     <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                                    document.getElementById('logout-form').submit();">Logout</a>
+                                                                                                                                document.getElementById('logout-form').submit();">Logout</a>
                                     </li>
                                 </ul>
                             </li>
@@ -403,8 +286,8 @@
         {{-- <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div> --}}
 
         <!--
-         Start Preloader
-         ==================================== -->
+                                                                     Start Preloader
+                                                                     ==================================== -->
         <div class="preloader">
             <div class="sk-cube-grid">
                 <div class="sk-cube sk-cube1"></div>
@@ -416,7 +299,21 @@
                 <div class="sk-cube sk-cube7"></div>
                 <div class="sk-cube sk-cube8"></div>
                 <div class="sk-cube sk-cube9"></div>
+
+
             </div>
+            <br>
+            <h5>Please Wait Loading..... </h5>
+
         </div>
         <!-- End Preloader
-                ==================================== -->
+                                                                            ==================================== -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                offset: 200,
+                duration: 600,
+                easing: 'ease-in-sine',
+                delay: 100,
+            });
+        </script>
