@@ -76,7 +76,8 @@ body {
     ) !important;
 }
 .hero-img {
-    height: 82.5vh !important;
+    height: 85.8vh !important;
+    margin-top: 100px;
 }
 
 .owl-item-slider img {
@@ -302,9 +303,9 @@ body {
     .flat-mega-menu img {
         margin-left: 20px;
     }
-
+    
     .title-header h1 {
-        font-size: 2.7rem;
+        font-size: 1.8rem;
         font-weight: 800;
     }
     .title-header p,

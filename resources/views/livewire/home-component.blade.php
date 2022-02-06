@@ -12,6 +12,7 @@
                         <p class="lead">Book On Demand Home Services On Your Finger Tip</p>
 
                     </div>
+
                     @if (Route::has('login'))
                         @auth
                             @if (Auth::user()->u_type === 'ADM')
@@ -317,7 +318,7 @@
                                 <div class="col-md-4 ">
                                     <div class="services-lines-info "
                                         data-aos="zoom-in"">
-                                                                                                                                                                                                    <h2 data-aos="
+                                                                                                                                                                                                                                                                                                                                                                                                                                                    <h2 data-aos="
                                         zoom-in">
                                         WELCOME
                                         TO TOTAL
@@ -510,20 +511,9 @@
                 </section>
 
             </div>
-            {{-- <div class="alan-btn"></div>
-<script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
-<script>
-    var alanBtnInstance = alanBtn({
-        key: "0a852218513167bb5fd45dba3e4d99c72e956eca572e1d8b807a3e2338fdd0dc/stage",
-        onCommand: function(commandData) {
-            if (commandData.command === "gotoLogin") {
-                //call client code that will react on the received command
-                window.location.href = '/login';
-            }
-        },
-        rootEl: document.getElementById("alan-btn"),
-    });
-</script> --}}
+            <div class="alan-btn"></div>
+
+
             <!-- Testimonial Start -->
             <div class="container-xxl  wow fadeInUp" data-wow-delay="0.1s" style="padding-top: 3rem;">
                 <div class="container px-lg-5">
@@ -559,6 +549,9 @@
                     </div>
                 </div>
             </div>
+            {{-- <a href="https://api.whatsapp.com/send?phone=917071967998"
+                style="display: inline-block; padding:16px; border-radius: 8px;  #fff; text-decoration: none; font-family: sans-serif; font-size: 16px;"><img
+                    src="https://cliply.co/wp-content/uploads/2021/08/372108180_WHATSAPP_ICON_400.gif" width="100" height="110"></a> --}}
             <!-- Testimonial End -->
             </div>
             @push('scripts')
