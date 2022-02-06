@@ -34,7 +34,7 @@
                                                 class="icon-img" height="80px" width="80px" data-aos="zoom-in"
                                                 src="{{ asset('images/services-categories') }}/{{ $scategory->image }}"
                                                 alt="{{ $scategory->name }}"></a></i>
-                                    <h5 data-aos="zoom-in">{{ $scategory->name }}</h5>
+                                    <h5><strong>{{ $scategory->name }}</strong></h5>
                                 </div>
                             </li>
                         @endforeach

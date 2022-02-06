@@ -73,22 +73,15 @@
 </div>
 <script type="text/javascript" src="{{ url('assets/js/nav/jquery.sticky.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/totop/jquery.ui.totop.js') }}"></script>
-{{-- <script type="text/javascript" src="{{ url('assets/js/accordion/accordion.js') }}"></script> --}}
 <script type="text/javascript" src="{{ url('assets/js/rs-plugin/js/jquery.themepunch.tools.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
-{{-- <script type="text/javascript" src="{{ url('assets/js/maps/gmap3.js') }}"></script> --}}
 <script type="text/javascript" src="{{ url('assets/js/fancybox/jquery.fancybox.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/carousel/carousel.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/filters/jquery.isotope.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/twitter/jquery.tweet.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/flickr/jflickrfeed.min.js') }}"></script>
-{{-- <script type="text/javascript" src="{{ url('assets/js/theme-options/theme-options.js') }}"></script>
-<script type="text/javascript" src="{{ url('assets/js/theme-options/jquery.cookies.js') }}"></script> --}}
 <script type="text/javascript" src="{{ url('assets/js/bootstrap/bootstrap.min.js') }}"></script>
-{{-- <script type="text/javascript" src="{{ url('assets/js/bootstrap/bootstrap-slider.js') }}"></script>
-<script type="text/javascript" src="{{ url('assets/js/dtb/jquery.dataTables.min.js') }}"></script> --}}
 <script type="text/javascript" src="{{ url('assets/js/dtb/jquery.table2excel.js') }}"></script>
-
 <script type="text/javascript" src="{{ url('assets/js/select2.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/bootstrap3-typeahead.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/main.js') }}"></script>

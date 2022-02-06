@@ -87,8 +87,8 @@
     <!-- Sidebar Header starts-->
     <div class="sidebar-header">
         <div class="logo clearfix"><a href="/" class="logo-text float-left">
-                <div class="logo-img ">TS</div>
-                {{-- <span class="text align-left">Total Services</span> --}}
+                <div class="logo-img "><img src="{{asset('images/d-logo.png')}}" width="35" alt=""></div>
+                <span class="text align-left">Total Services</span>
             </a>
             <a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i
                     data-toggle="expanded" class="toggle-icon ft-toggle-right"></i></a><a id="sidebarClose"

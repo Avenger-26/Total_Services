@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <meta name="viewport" content="width-device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('assets\img\fav.png') }}">
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url('assets/css/chblue.css') }}" rel="stylesheet" media="screen">
     {{-- animate-on-scroll --}}
