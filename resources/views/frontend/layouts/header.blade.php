@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <meta name="viewport" content="width-device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('assets\img\fav.png') }}">
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url('assets/css/chblue.css') }}" rel="stylesheet" media="screen">
     {{-- animate-on-scroll --}}
@@ -79,7 +79,7 @@
 
             <ul class="collapse">
                 <li class="title">
-                    <a href="/"><img style="width:146px" src="{{ asset('assets\img\Total Services-1.png') }}"
+                    <a href="/"><img style="width:140px" src="{{ asset('assets\img\m-logo.png') }}"
                             alt="logo"></a>
                     {{-- <a href="/">On~Demand Services</a> --}}
                 </li>

@@ -208,7 +208,7 @@
                                                 <td>
                                                     @if ($user->image)
                                                         <img src="{{ asset('images/customer') }}/{{ $user->image }}"
-                                                            alt="" width="100" height="100"
+                                                            alt="" width="60" height="60"
                                                             class="rounded-circle img-border gradient-summer">
                                                     @else
                                                         <img src="{{ asset('images/sproviders/default.png') }}" alt=""
@@ -330,9 +330,18 @@
                                                 <td><span
                                                         class="badge badge-success mt-3">#SP0{{ $sprovider->id }}</span>
                                                 </td>
-                                                <td><img class="rounded-circle img-border gradient-summer  "
-                                                        src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
-                                                        width="80" height="80" alt=""></td>
+                                                <td>
+                                                    @if ($sprovider->image)
+                                                        <img src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
+                                                            width="60" height="60" alt=""
+                                                            class="rounded-circle img-border gradient-summer">
+
+                                                    @else
+                                                        <img src="{{ asset('images/sproviders/default.jpg') }}"
+                                                            alt="" class="rounded-circle img-border gradient-summer "
+                                                            width="60" height="60" />
+                                                    @endif
+                                                </td>
                                                 <td>{{ $sprovider->name }}</td>
                                                 <td>
                                                     @if ($sprovider->service_category_id)
