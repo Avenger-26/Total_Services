@@ -7,14 +7,14 @@
     }
     /* Filter Header - Title Header ------------------------------*/
     .filter-title {
-        top: 12%;
+        top: 25%;
         left: 0%;
         margin-left: 0;
         width: 100%;
     }
     .title-header h1 {
-        font-size:3.5rem;
-        width: 100%!important;
+        font-size: 3.5rem;
+        width: 100% !important;
         line-height: 4.3rem;
     }
     .filter-header {
@@ -38,7 +38,7 @@
     }
     /* Filter Header - Title Header ------------------------------*/
     .filter-title {
-        top: 12%;
+        top: 25%;
         left: 0%;
         margin-left: 0;
         width: 100%;
@@ -125,7 +125,7 @@
         font-size: 1rem;
     }
     .filter-title {
-        top: 12%;
+        top: 25% !important;
         left: 10%;
         margin-left: -5%;
         width: 90%;

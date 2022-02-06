@@ -2231,7 +2231,7 @@ hr.separator:before {
 @media (max-width: 768px) {
     .header-carousel .owl-carousel-item {
         position: relative;
-        min-height: 80vh;
+        min-height: 101vh;
     }
 
     .header-carousel .owl-carousel-item img {
@@ -5095,7 +5095,7 @@ i.fa-truck {
     }
 
     .filter-title {
-        top: 10% !important;
+        top: 25% !important;
     }
 
     .tparrows.preview1,

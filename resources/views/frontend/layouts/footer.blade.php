@@ -88,13 +88,12 @@
 {{-- <script type="text/javascript" src="{{ url('assets/js/bootstrap/bootstrap-slider.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/dtb/jquery.dataTables.min.js') }}"></script> --}}
 <script type="text/javascript" src="{{ url('assets/js/dtb/jquery.table2excel.js') }}"></script>
-{{-- <script type="text/javascript" src="{{ url('assets/js/dtb/script.js') }}"></script> --}}
+
 <script type="text/javascript" src="{{ url('assets/js/select2.min.js') }}"></script>
-{{-- <script type="text/javascript" src="{{ url('assets/js/jquery.validate.min.js') }}"></script>
-<script type="text/javascript" src="{{ url('assets/js/validation-rule.js') }}"></script> --}}
 <script type="text/javascript" src="{{ url('assets/js/bootstrap3-typeahead.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/main.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/slick.min.js') }}"></script>
+
 <script type="text/javascript" src="{{ url('assets/js/owl.carousel.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/purecounter.js') }}"></script>
 <script type="text/javascript">
