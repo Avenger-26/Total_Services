@@ -86,6 +86,7 @@
 <script type="text/javascript" src="{{ url('assets/js/bootstrap3-typeahead.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/main.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/slick.min.js') }}"></script>
+
 <script type="text/javascript" src="{{ url('assets/js/owl.carousel.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/purecounter.js') }}"></script>
 <script type="text/javascript">
