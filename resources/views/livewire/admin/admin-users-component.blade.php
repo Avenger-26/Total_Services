@@ -25,7 +25,7 @@
                                     </div>
                                 </div>
 
-                                <div class="card-content">
+                                <div class="card-content table-responsive">
                                     <div class="">
 
                                         @if (Session::has('message'))
@@ -39,7 +39,7 @@
 
                                     </div>
                                     @endif
-                                    <table class="table text-center table-responsive table-striped table-hover shadow ">
+                                    <table class="table text-center  table-striped table-hover shadow ">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
@@ -104,14 +104,7 @@
     </div>
     <!-- END : End Main Content-->
 
-    <!-- BEGIN : Footer-->
-    <footer class="footer footer-static footer-light">
-        <p class="clearfix text-muted text-sm-center px-2"><span>Copyright &copy; 2021 <a
-                    href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink"
-                    target="_blank" class="text-bold-800 primary darken-2">Team 26 </a>, All rights
-                reserved. </span></p>
-    </footer>
-    <!-- End : Footer-->
+   
 
 </div>
 </div>
