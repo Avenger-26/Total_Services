@@ -8,7 +8,7 @@
                 </div>
                 <div class="filter-title">
                     <div class="title-header">
-                        <h1 style="" style="color:#1597e5;">Welcome To Total Services </h1>
+                        <h1 style="" style="color:#1597e5;">Welcome To VS Home Services </h1>
                         <p class="lead">Book On Demand Home Services On Your Finger Tip</p>
 
                     </div>
@@ -316,12 +316,11 @@
                             <div class="row">
                                 <div class="col-md-4 ">
                                     <div class="services-lines-info "
-                                        data-aos="zoom-in"">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    <h2 data-aos="
+                                        data-aos="zoom-in">
+                                        <h2 data-aos="
                                         zoom-in">
                                         WELCOME
-                                        TO TOTAL
-                                        SERVICE</h2>
+                                        TO VS Home Services</h2>
                                         <p data-aos="zoom-in" class="lead">
                                             Book best services at one place.
                                             <span class="line"></span>

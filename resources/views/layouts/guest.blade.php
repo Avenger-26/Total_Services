@@ -8,8 +8,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @if (Route::currentRouteName() == 'login')
-        <title>Total Services | Login Page</title>
-    @elseif(Route::currentRouteName() == 'register') <title>Total Services | Registration Page</title>
+        <title>VS Home Services | Login Page</title>
+    @elseif(Route::currentRouteName() == 'register') <title>VS Home Services | Registration Page</title>
     @endif
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">

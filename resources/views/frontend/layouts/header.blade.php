@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Total Service - Online Service Provider for your House Needs</title>
+    <title>VS Home Services - Online Service Provider for your House Needs</title>
     <link rel="manifest" href="/manifest.json">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width-device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{ asset('assets\img\fav.png') }}">
+    <link rel="shortcut icon" href="{{asset('images/d-logo.png')}}">
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url('assets/css/chblue.css') }}" rel="stylesheet" media="screen">
     {{-- animate-on-scroll --}}
