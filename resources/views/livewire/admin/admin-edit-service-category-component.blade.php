@@ -93,7 +93,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn-hover color-hover mx-auto d-flex">Update</button>
+                                            <button type="submit"
+                                                class="btn-hover color-hover mx-auto d-flex">Update</button>
                                         </form>
                                     </div>
                                 </div>
@@ -106,7 +107,6 @@
         </div>
     </div>
     <!-- END : End Main Content-->
-
 
 </div>
 </div>

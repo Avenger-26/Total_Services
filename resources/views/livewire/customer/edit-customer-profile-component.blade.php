@@ -5,8 +5,8 @@
         <div class="main-content">
             <div class="content-wrapper">
                 <div class="row justify-content-md-center">
-                    <div class="col-md-10">
-                        <div class="card gradient-border  px-3">
+                    <div class="col-md-11 col-sm-11 mx-auto">
+                        <div class="card shadow px-3">
                             <div class="card-header">
                                 <h4 class="card-title text-center" style="font-size:28px; font-weight:bolder"
                                     id="from-actions"><i class="fa fa-user-plus"></i>Update Profile</h4>
@@ -14,17 +14,7 @@
                             </div>
                             <hr>
                             <div class="card-content">
-                                {{-- <div class="px-3">
-                                    @if (Session::has('message'))
-                                        <div class="alert alert-success alert-dismissible mb-2" role="alert">
-                                            <button type="button" class="close" data-dismiss="alert"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                            {{ Session::get('message') }}
-                                        </div>
-                                    @endif
-                                </div> --}}
+
                                 @if (Session::has('message'))
                                     <script>
                                         Swal.fire({

@@ -22,7 +22,7 @@ class EditCustomerProfileComponent extends Component
 
     public function mount()
     {
-        $scustomer = User::where('id',Auth::user()->id)->first();
+        $scustomer = User::where('id', Auth::user()->id)->first();
         $this->customer_id = $scustomer->id;
         $this->name = $scustomer->name;
         $this->email = $scustomer->email;
@@ -33,18 +33,17 @@ class EditCustomerProfileComponent extends Component
     public function updateProfile()
     {
         $scustomer = User::where('id', Auth::user()->id)->first();
-        if ($this->newimage) 
-        { 
+        if ($this->newimage) {
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->getClientOriginalName();
-            $this->newimage->storeAs('customer', $imageName);
+            $this->newimage->storeAs('customer', $imageName, 'uploads');
             $scustomer->image = $imageName;
         }
         $scustomer->name = $this->name;
         $scustomer->email = $this->email;
         $scustomer->phone = $this->phone;
         $scustomer->address = $this->address;
-        $scustomer ->save();
-        session()->flash('message', 'Profile has been updated successfully !'); 
+        $scustomer->save();
+        session()->flash('message', 'Profile has been updated successfully !');
     }
     public function render()
     {

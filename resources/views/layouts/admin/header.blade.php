@@ -86,9 +86,10 @@
     <!-- main menu header-->
     <!-- Sidebar Header starts-->
     <div class="sidebar-header">
-        <div class="logo clearfix"><a href="/" class="logo-text float-left">
-                <div class="logo-img "><img src="{{asset('images/d-logo.png')}}" width="30" alt=""></div>
-                <span class="text align-left">Home Services</span>
+        <div class="logo clearfix"><a href="/" class="text-white">
+                <div class="logo-img ">
+                    <h4>VS Home Services</h4>
+                </div>
             </a>
             <a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i
                     data-toggle="expanded" class="toggle-icon ft-toggle-right"></i></a><a id="sidebarClose"
@@ -215,7 +216,7 @@
                                     <button type="button" class="btn btn-info ">
                                         <i class="fa fa-envelope"></i>
                                     </button>
-                                    <span class="badge badge-light badge-notify">2</span>
+
                                 </span>
                             </a></li>
                         <li class="nav-item mr-2 d-none d-lg-block"><a id="navbar-fullscreen" href="javascript:;"

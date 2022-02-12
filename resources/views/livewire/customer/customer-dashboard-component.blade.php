@@ -19,14 +19,15 @@
         <div class="main-content">
             <div class="content-wrapper">
                 <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-xl-5 col-lg-5 col-md-5 col-11 mx-auto ">
-                        <div class="card gradient-blackberry shadow dynamic-cards">
+
+
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                        <div class="card gradient-blackberry   dynamic-cards shadow">
                             <div class="card-content">
-                                <div class="card-body pt-2 pb-2">
+                                <div class="card-body pt-2 pb-0">
                                     <div class="media">
                                         <div class="media-body white text-left">
-                                            <h3 class="font-large-2 mb-0"><b>{{ $totalServices }}</b></h3>
+                                            <h3 class="font-large-1 mb-0">{{ $totalServices }}</h3>
                                             <span class="font-medium-4"><b>Total Booked Services</b></span>
                                         </div>
                                         <div class="media-right white text-right">
@@ -35,37 +36,36 @@
                                     </div>
                                 </div>
                                 <div id="Widget-line-chart"
-                                    class="height-80 WidgetlineChart WidgetlineChartshadow mb-2">
+                                    class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-5 col-lg-5 col-md-5 col-11 mx-auto h-50 ">
-                        <div class="card gradient-ibiza-sunset  shadow dynamic-cards">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+                        <div class="card  gradient-ibiza-sunset  shadow dynamic-cards">
                             <div class="card-content">
-                                <div class="card-body pt-2 pb-2">
+                                <div class="card-body pt-2 pb-0">
                                     <div class="media">
                                         <div class="media-body white text-left">
-                                            <h3 class="font-large-2 mb-0"><b>₹{{ $totalCost }}</b></h3>
-                                            <span class="font-medium-4"><b>Total Services Cost</b></span>
+                                            <h3 class="font-large-1 mb-0">₹{{ $totalCost }}</h3>
+                                            <span class="font-medium-4"><b>Total Booked Services</b></span>
                                         </div>
                                         <div class="media-right white text-right">
                                             <i class="icon-wallet fa-4x"></i>
                                         </div>
                                     </div>
                                 </div>
-                                <div id="Widget-line-chart1"
-                                    class="height-80 WidgetlineChart WidgetlineChartshadow mb-2">
+                                <div id="Widget-line-chart2"
+                                    class="height-75 WidgetlineChart WidgetlineChartshadow mb-2">
                                 </div>
-
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-1"></div>
+
                 </div>
                 <div class="row match-height justify-content-md-center">
-                    <div class="col-xl-12 col-lg-8 col-md-8 col-sm-12">
-                        <div class="card shadow ">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <div class="card shadow " style="overflow-x: auto">
                             <div class="card-header pb-2">
                                 <h4 class="card-title text-info"
                                     style="text-align:center;font-weight:500; font-size:1.7rem;">
@@ -87,39 +87,33 @@
                                     </thead>
                                     <tbody>
 
-                                     
-                                            @foreach ($paytms as $paytm)
-                                                @if ($paytm->user_id === Auth::user()->id)
-                                                    <tr>
-                                                        <td><span
-                                                                class="badge badge-success mt-2 ">#BH0{{ $paytm->id }}</span>
-                                                        </td>
-            
-                                                        <td>{{ $paytm->slug_name }}</td>
-                                                        <td>{{ $paytm->order_id }}</td>
-                                                        <td>{{ $paytm->sprovider_name }}</td>
-                                                        <td>{{ $paytm->price }}</td>
-                                                        <td>{{ $paytm->created_at }}</td>
-                                                        <td>
-                                                            <a href="#"
-                                                                onclick="confirm('Are you sure, you want to delete this booking histroy!')||event.stopImmediatePropagation()"
-                                                                wire:click.prevent="deleteService({{ $paytm->id }})">
-                                                                <i class="ft-trash-2 text-danger font-medium-3"></i>
-                                                            </a>
-                                                            <a href="#"
-                                                                onclick="confirm('Are you sure, you want to cancel this service')||event.stopImmediatePropagation()"
-                                                                wire:click.prevent="deleteService({{ $paytm->id }})">
-                                                                <i class="
-                                                                ft-x text-seconuday font-medium-3"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                @endif
 
-                                            @endforeach
+                                        @foreach ($paytms as $paytm)
+                                            @if ($paytm->user_id === Auth::user()->id)
+                                                <tr>
+                                                    <td><span
+                                                            class="badge badge-success mt-2 ">#BH0{{ $paytm->id }}</span>
+                                                    </td>
+
+                                                    <td>{{ $paytm->slug_name }}</td>
+                                                    <td>{{ $paytm->order_id }}</td>
+                                                    <td>{{ $paytm->sprovider_name }}</td>
+                                                    <td>{{ $paytm->price }}</td>
+                                                    <td>{{ $paytm->created_at }}</td>
+                                                    <td>
+                                                        <a href="#"
+                                                            onclick="confirm('Are you sure, you want to delete this booking histroy!')||event.stopImmediatePropagation()"
+                                                            wire:click.prevent="deleteService({{ $paytm->id }})">
+                                                            <i class="ft-trash-2 text-danger font-medium-3"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            @endif
+
+                                        @endforeach
                                     </tbody>
                                 </table>
-                                {{$paytms->links('pagination.custom') }}
+                                {{ $paytms->links('pagination.custom') }}
                             </div>
                         </div>
                     </div>

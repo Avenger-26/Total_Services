@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="utf-8">
-    <title>VS Home Services - Online Service Provider for your House Needs</title>
+    <title>VS Home Services - OnDemand Home Services for your House Needs</title>
     <link rel="manifest" href="/manifest.json">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width-device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{asset('images/d-logo.png')}}">
+    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}">
     <link href="{{ url('assets/css/style.css') }}" rel="stylesheet" media="screen">
     <link href="{{ url('assets/css/chblue.css') }}" rel="stylesheet" media="screen">
     {{-- animate-on-scroll --}}
@@ -65,7 +65,7 @@
                         </div>
                         <div class="col-md-6">
                             <ul class="visible-md visible-lg visible-sm visible-xs  text-right">
-                                <li><i class="fa fa-comment"></i> Live Chat</li>
+                                <li><i class="fa fa-comment"></i><a href="/chat"> Live Chat</a></li>
                                 <li><a href="index.php/changelocation.html"><i class="fa fa-map-marker"></i> Uttar
                                         Pradesh,
                                         Lucknow</a></li>
@@ -83,7 +83,7 @@
                 <ul class="collapse">
                     <li class="title">
                         <a href="/"><img src="{{ asset('assets\img\logo.png') }}" alt="logo"
-                            style="filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.3));width:160px;margin-bottom:5px"></a>
+                                style="width:180px;"></a>
 
                         {{-- <a href="/">On~Demand Services</a> --}}
                     </li>
@@ -277,7 +277,7 @@
                                         <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li>
                                         <li><a href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                document.getElementById('logout-form').submit();">Logout</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        document.getElementById('logout-form').submit();">Logout</a>
                                         </li>
                                     </ul>
                                 </li>
