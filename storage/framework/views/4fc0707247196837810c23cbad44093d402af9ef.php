@@ -7,33 +7,48 @@
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
+
         var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
             <?php echo $chartData; ?>
         ]);
+
         var options = {
+
             is3D: true,
             pieHole: 0.4,
+
+
         };
+
+
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+
         chart.draw(data, options);
     }
 </script>
+
+
+
+
+
 <div>
-    @include('../../layouts/admin/header')
+
+    <?php echo $__env->make('../../layouts/admin/header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <div class="main-panel">
         <!-- BEGIN : Main Content-->
         <div class="main-content">
             <div class="content-wrapper">
                 <!--Statistics cards Starts-->
                 <div class="row">
-                    <div class="col-md-6 col-sm-11 h-100">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-11 mx-auto">
                         <div class="card gradient-blackberry dynamic-cards shadow">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
                                     <div class="media">
                                         <div class="media-body white text-left">
-                                            <h3 class="font-large-1 mb-0">{{ $totalServiceProvider }}</h3>
+                                            <h3 class="font-large-1 mb-0"><?php echo e($totalServiceProvider); ?></h3>
                                             <span>Total Service Providers</span>
                                         </div>
                                         <div class="media-right white text-right">
@@ -48,14 +63,14 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-sm-11 h-100">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-11 mx-auto">
                         <div class="card gradient-ibiza-sunset dynamic-cards shadow"
                             wire:click="location.href='/admin/service-provider'">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
                                     <div class="media">
                                         <div class="media-body white text-left">
-                                            <h3 class="font-large-1 mb-0">{{ $totalUser }}</h3>
+                                            <h3 class="font-large-1 mb-0"><?php echo e($totalUser); ?></h3>
                                             <span>Total Users</span>
                                         </div>
                                         <div class="media-right white text-right">
@@ -69,14 +84,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-11 h-100">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-11 mx-auto">
                         <div class="card gradient-green-tea shadow dynamic-cards">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
                                     <div class="media">
 
                                         <div class="media-body white text-left">
-                                            <h3 class="font-large-1 mb-0">{{ $totalServiceCategories }}</h3>
+                                            <h3 class="font-large-1 mb-0"><?php echo e($totalServiceCategories); ?></h3>
                                             <span class="font-small-3">Total Service Categories</span>
                                         </div>
                                         <div class="media-right white text-right">
@@ -91,13 +106,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-11 h-100">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-11 mx-auto">
                         <div class="card gradient-pomegranate shadow dynamic-cards">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
                                     <div class="media">
                                         <div class="media-body white text-left">
-                                            <h3 class="font-large-1 mb-0">₹{{ $total }}</h3>
+                                            <h3 class="font-large-1 mb-0">₹<?php echo e($total); ?></h3>
                                             <span>Total Earning</span>
                                         </div>
                                         <div class="media-right white text-right">
@@ -112,7 +127,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- Line with Area Chart 1 Starts--> --}}
+                
                 <div class="row">
                     <div class="col-md-6 col-sm-11 h-100">
                         <div class="card shadow w-100">
@@ -156,56 +171,61 @@
                             <div class="card-content">
                                 <div class="table-responsive">
 
-                                    @if (Session::has('message'))
+                                    <?php if(Session::has('message')): ?>
                                         <script>
                                             Swal.fire({
                                                 icon: 'success',
-                                                title: "{!! Session::get('message') !!}",
+                                                title: "<?php echo Session::get('message'); ?>",
                                                 text: 'Great Job!',
                                             });
                                         </script>
 
                                 </div>
-                                @endif
+                                <?php endif; ?>
                                 <table class="table text-center  table-striped table-hover shadow ">
                                     <thead>
                                         <tr>
+
+
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
                                             <th>Location</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @if ($users === null)
+                                        <?php if($users === null): ?>
                                             <tr>
                                                 <td colspan="4" class="text-center">
                                                     <h4 class="text-danger font-weight-bolder">No Booking
                                                         History Found</h4>
                                                 </td>
 
-                                            @else
-                                                @foreach ($users as $user)
+                                            <?php else: ?>
+                                                <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <tr>
                                                 <td>
-                                                    @if ($user->image)
-                                                        <img src="{{ asset('images/customer') }}/{{ $user->image }}"
+                                                    <?php if($user->image): ?>
+                                                        <img src="<?php echo e(asset('images/customer')); ?>/<?php echo e($user->image); ?>"
                                                             alt="" width="60" height="60"
                                                             class="rounded-circle img-border gradient-summer">
-                                                    @else
-                                                        <img src="{{ asset('images/sproviders/default.jpg') }}" alt=""
+                                                    <?php else: ?>
+                                                        <img src="<?php echo e(asset('images/sproviders/default.jpg')); ?>" alt=""
                                                             class="rounded-circle img-border gradient-summer" width="60" height="60">
-                                                    @endif
+                                                    <?php endif; ?>
                                                 </td>
-                                                <td>{{ $user->email }}</td>
-                                                <td>{{ $user->phone }}</td>
-                                                <td>{{ $user->address }}</td>
+                                                <td><?php echo e($user->email); ?></td>
+                                                <td><?php echo e($user->phone); ?></td>
+
+                                                <td><?php echo e($user->address); ?></td>
                                             </tr>
-                                        @endforeach
-                                        @endif
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                        <?php endif; ?>
                                     </tbody>
                                 </table>
-                                {{ $users->links('pagination.custom') }}
+                                <?php echo e($users->links('pagination.custom')); ?>
+
                             </div>
                         </div>
                     </div>
@@ -223,6 +243,7 @@
 
                                 </div>
                             </div>
+
                             <div class="card-content">
                                 <div class="">
                                     <table class="table text-center table-striped table-hover shadow">
@@ -238,29 +259,34 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($contacts as $contact)
+
+                                            <?php $__currentLoopData = $contacts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $contact): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <tr>
                                                     <td><span
-                                                            class="badge badge-success ">#QU0{{ $contact->id }}</span>
+                                                            class="badge badge-success ">#QU0<?php echo e($contact->id); ?></span>
                                                     </td>
-                                                    <td>{{ $contact->name }}</td>
-                                                    <td>{{ $contact->email }}</td>
-                                                    <td>{{ $contact->phone }}</td>
-                                                    <td>{{ $contact->message }}</td>
-                                                    <td>{{ $contact->created_at }}</td>
+                                                    <td><?php echo e($contact->name); ?></td>
+                                                    <td><?php echo e($contact->email); ?></td>
+                                                    <td><?php echo e($contact->phone); ?></td>
+                                                    <td><?php echo e($contact->message); ?></td>
+                                                    <td><?php echo e($contact->created_at); ?></td>
                                                     <td> <a type="button" title="Delete" class=""
-                                                            wire:click="deleteConfirm({{ $contact->id }})"><i
+                                                            wire:click="deleteConfirm(<?php echo e($contact->id); ?>)"><i
                                                                 class="ft-trash-2 fa-2x mr-2  text-danger"></i></a>
                                                     </td>
                                                 </tr>
-                                            @endforeach
+                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+
                                         </tbody>
                                     </table>
                                     <div class="Export-btn">
-                                        <a href="{{ route('admin.export_contacts') }}"
-                                            class="btn btn-success pull-right mx-3">Export Data <i
-                                                class="fa fa-file-excel-o" aria-hidden="true"></i></a>
+                                        <a href="<?php echo e(route('admin.export_contacts')); ?>"
+                                            class="btn btn-success pull-right mx-3">Export Data</a>
                                     </div>
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -278,13 +304,16 @@
 
                             </div>
                         </div>
+
                         <div class="card-content ">
                             <div class="">
-                                @if (Session::has('message'))
+
+                                <?php if(Session::has('message')): ?>
                                     <div class="alert alert-success" role="alert">
-                                        {{ Session::get('message') }}
+                                        <?php echo e(Session::get('message')); ?>
+
                                     </div>
-                                @endif
+                                <?php endif; ?>
                                 <table class="table text-center table-striped table-hover  shadow px-3">
                                     <thead>
                                         <tr class="">
@@ -298,48 +327,54 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($sproviders as $sprovider)
+                                        <?php $__currentLoopData = $sproviders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sprovider): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                             <tr>
                                                 <td><span
-                                                        class="badge badge-success mt-3">#SP0{{ $sprovider->id }}</span>
+                                                        class="badge badge-success mt-3">#SP0<?php echo e($sprovider->id); ?></span>
                                                 </td>
                                                 <td>
-                                                    @if ($sprovider->image)
-                                                        <img src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
-                                                            width="80" height="80" alt=""
+                                                    <?php if($sprovider->image): ?>
+                                                        <img src="<?php echo e(asset('images/sproviders')); ?>/<?php echo e($sprovider->image); ?>"
+                                                            width="60" height="60" alt=""
                                                             class="rounded-circle img-border gradient-summer">
 
-                                                    @else
-                                                        <img src="{{ asset('images/sproviders/default.jpg') }}"
+                                                    <?php else: ?>
+                                                        <img src="<?php echo e(asset('images/sproviders/default.jpg')); ?>"
                                                             alt="" class="rounded-circle img-border gradient-summer "
                                                             width="60" height="60" />
-                                                    @endif
+                                                    <?php endif; ?>
                                                 </td>
-                                                <td>{{ $sprovider->name }}</td>
+                                                <td><?php echo e($sprovider->name); ?></td>
                                                 <td>
-                                                    @if ($sprovider->service_category_id)
-                                                        {{ $sprovider->category->name }}
-                                                    @endif
+                                                    <?php if($sprovider->service_category_id): ?>
+                                                        <?php echo e($sprovider->category->name); ?>
+
+                                                    <?php endif; ?>
+
                                                 </td>
-                                                <td>{{ $sprovider->phone }}</td>
-                                                <td>{{ $sprovider->address }}</td>
+                                                <td><?php echo e($sprovider->phone); ?></td>
+                                                <td><?php echo e($sprovider->address); ?></td>
                                                 <td>
+
+                                                    
                                                     <a href="#"
                                                         onclick="confirm('Are you sure, you want to delete this service Provider!')||event.stopImmediatePropagation()"
-                                                        wire:click.prevent="deleteServiceProvider({{ $sprovider->id }})"
+                                                        wire:click.prevent="deleteServiceProvider(<?php echo e($sprovider->id); ?>)"
                                                         style="margin-left:10px"><i
                                                             class="fa fa-trash fa fa-trash  text-danger  fa-2x   mr-2"></i></a>
                                                 </td>
                                             </tr>
-                                        @endforeach
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </tbody>
                                 </table>
 
                                 <div class="Export-btn">
-                                    <a href="{{ route('admin.export_service_provider') }}"
-                                        class="btn btn-success pull-right mx-3">Export Data <i
-                                            class="fa fa-file-excel-o" aria-hidden="true"></i></a>
+                                    <a href="<?php echo e(route('admin.export_service_provider')); ?>"
+                                        class="btn btn-success pull-right mx-3">Export Data</a>
                                 </div>
+
+
+
                             </div>
                         </div>
                     </div>
@@ -348,11 +383,16 @@
         </div>
 
     </div>
+
     <!-- END : End Main Content-->
+
+
+
 </div>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript">
     var users = <?php echo json_encode($new_users); ?>;
+
     Highcharts.chart('container', {
         title: {
             text: 'New Users Growth - 2022'
@@ -398,29 +438,4 @@
         }
     });
 </script>
-<script>
-    window.addEventListener('Swal.fire:confirm', event => {
-        Swal.fire({
-            title: event.detail.title,
-            text: event.detail.text,
-            icon: event.detail.type,
-            showCancelButton: event.detail.showCancelButton,
-            confirmButtonColor: event.detail.confirmButtonColor,
-            cancelButtonColor: event.detail.cancelButtonColor,
-
-        }).then((result) => {
-            if (result.isConfirmed) {
-
-                window.livewire.emit('delete', event.detail.id)
-            } else if (
-
-            ) {
-                Swal.fire(
-                    'Cancelled',
-                    'Your Data is safe ',
-                    'error'
-                );
-            }
-        })
-    });
-</script>
+<?php /**PATH C:\Users\cws\Documents\Master Laravel Project\Total-Services\resources\views/livewire/admin/admin-dashboard-component.blade.php ENDPATH**/ ?>

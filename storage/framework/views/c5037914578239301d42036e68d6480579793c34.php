@@ -1,12 +1,12 @@
 <div>
-    @include('../layouts/customer/header')
+    <?php echo $__env->make('../layouts/customer/header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <div class="main-panel">
         <!-- BEGIN : Main Content-->
         <div class="main-content">
             <div class="content-wrapper">
                 <div class="row justify-content-md-center">
-                    <div class="col-md-11 col-sm-11 mx-auto">
-                        <div class="card shadow px-3">
+                    <div class="col-md-10">
+                        <div class="card gradient-border  px-3">
                             <div class="card-header">
                                 <h4 class="card-title text-center" style="font-size:28px; font-weight:bolder"
                                     id="from-actions"><i class="fa fa-user-plus"></i>Update Profile</h4>
@@ -14,17 +14,17 @@
                             </div>
                             <hr>
                             <div class="card-content">
-
-                                @if (Session::has('message'))
+                                
+                                <?php if(Session::has('message')): ?>
                                     <script>
                                         Swal.fire({
                                             icon: 'success',
-                                            title: "{!! Session::get('message') !!}",
+                                            title: "<?php echo Session::get('message'); ?>",
                                             text: 'Great Job!',
 
                                         })
                                     </script>
-                                @endif
+                                <?php endif; ?>
 
                                 <form wire:submit.prevent="updateProfile" enctype="multipart/form-data">
                                     <div class="form-group">
@@ -55,17 +55,17 @@
 
                                         <input class="form-control-file border-primary" type="file" id="newimage"
                                             name="newimage" wire:model="newimage">
-                                        @if ($newimage)
-                                            <img src="{{ $newimage->temporaryUrl() }}" alt="" width="100" height="100"
+                                        <?php if($newimage): ?>
+                                            <img src="<?php echo e($newimage->temporaryUrl()); ?>" alt="" width="100" height="100"
                                                 class="rounded-circle img-border gradient-summer my-3">
-                                        @elseif($image)
-                                            <img src="{{ asset('images/customer') }}/{{ $image }}" alt=""
+                                        <?php elseif($image): ?>
+                                            <img src="<?php echo e(asset('images/customer')); ?>/<?php echo e($image); ?>" alt=""
                                                 width="100" height="100"
                                                 class="rounded-circle img-border gradient-summer my-3">
-                                        @else
-                                            <img src="{{ asset('images/sproviders/default.jpg') }}" alt=""
+                                        <?php else: ?>
+                                            <img src="<?php echo e(asset('images/sproviders/default.jpg')); ?>" alt=""
                                                 class="rounded-circle img-border gradient-summer width-100 my-3">
-                                        @endif
+                                        <?php endif; ?>
 
                                     </div>
                                     <button type="submit" class="btn-hover color-hover mx-auto d-flex">
@@ -85,3 +85,4 @@
 </div>
 </div>
 </div>
+<?php /**PATH C:\Users\cws\Documents\Master Laravel Project\Total-Services\resources\views/livewire/customer/edit-customer-profile-component.blade.php ENDPATH**/ ?>

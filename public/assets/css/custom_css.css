@@ -297,13 +297,19 @@ body {
     .hero-img {
         height: 45.5vh !important;
     }
+    .title-header{
+        margin-top: 6rem;
+    }
 }
 /* For mobile phones: */
 @media only screen and (max-width: 768px) {
     .flat-mega-menu img {
         margin-left: 20px;
     }
-
+    .title-header{
+        margin-top: 6rem;
+    }
+    
     .title-header h1 {
         font-size: 1.8rem;
         font-weight: 800;

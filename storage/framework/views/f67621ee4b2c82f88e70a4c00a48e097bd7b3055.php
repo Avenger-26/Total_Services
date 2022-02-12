@@ -3,29 +3,29 @@
 
 <head>
     <meta charset="utf-8">
-    <title>VS Home Services - OnDemand Home Services for your House Needs</title>
+    <title>VS Home Services - Online Service Provider for your House Needs</title>
     <link rel="manifest" href="/manifest.json">
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width-device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png') }}">
-    <link href="{{ url('assets/css/style.css') }}" rel="stylesheet" media="screen">
-    <link href="{{ url('assets/css/chblue.css') }}" rel="stylesheet" media="screen">
-    {{-- animate-on-scroll --}}
+    <link rel="shortcut icon" href="<?php echo e(asset('images/d-logo.png')); ?>">
+    <link href="<?php echo e(url('assets/css/style.css')); ?>" rel="stylesheet" media="screen">
+    <link href="<?php echo e(url('assets/css/chblue.css')); ?>" rel="stylesheet" media="screen">
+    
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Slick -->
-    <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/slick.css') }}" />
-    <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}" />
-    <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" />
+    <link type="text/css" rel="stylesheet" href="<?php echo e(asset('assets/css/slick.css')); ?>" />
+    <link type="text/css" rel="stylesheet" href="<?php echo e(asset('assets/css/slick-theme.css')); ?>" />
+    <link type="text/css" rel="stylesheet" href="<?php echo e(asset('assets/css/owl.carousel.min.css')); ?>" />
 
-    <link href="{{ url('assets/css/theme-responsive.css') }}" rel="stylesheet" media="screen">
+    <link href="<?php echo e(url('assets/css/theme-responsive.css')); ?>" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-    <link href="{{ url('assets/css/select2.min.css') }}" rel="stylesheet" media="screen">
+    <link href="<?php echo e(url('assets/css/select2.min.css')); ?>" rel="stylesheet" media="screen">
 
-    <link href="{{ url('assets/css/custom_css.css') }}" rel="stylesheet" media="screen">
+    <link href="<?php echo e(url('assets/css/custom_css.css')); ?>" rel="stylesheet" media="screen">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -34,12 +34,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
         type="text/css" />
 
-    <script type="text/javascript" src="{{ url('assets/js/jquery.js') }}"></script>
-    <script type="text/javascript" src="{{ url('assets/js/jquery-ui.1.10.4.min.js') }}"></script>
+    <script type="text/javascript" src="<?php echo e(url('assets/js/jquery.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(url('assets/js/jquery-ui.1.10.4.min.js')); ?>"></script>
 
-    {{-- <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger intent="WELCOME" chat-title="TS~Bot🤖" agent-id="b2e19dfa-a91a-41a6-b95c-df77b673663c"
-        language-code="en"></df-messenger> --}}
+    
     <style>
         body {
             overflow-x: hidden;
@@ -65,7 +63,7 @@
                         </div>
                         <div class="col-md-6">
                             <ul class="visible-md visible-lg visible-sm visible-xs  text-right">
-                                <li><i class="fa fa-comment"></i><a href="/chat"> Live Chat</a></li>
+                                <li><i class="fa fa-comment"></i> Live Chat</li>
                                 <li><a href="index.php/changelocation.html"><i class="fa fa-map-marker"></i> Uttar
                                         Pradesh,
                                         Lucknow</a></li>
@@ -82,14 +80,14 @@
 
                 <ul class="collapse">
                     <li class="title">
-                        <a href="/"><img src="{{ asset('assets\img\logo.png') }}" alt="logo"
-                                style="width:180px;"></a>
+                        <a href="/"><img src="<?php echo e(asset('assets\img\logo.png')); ?>" alt="logo"
+                            style="filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.3));width:160px;margin-bottom:5px"></a>
 
-                        {{-- <a href="/">On~Demand Services</a> --}}
+                        
                     </li>
-                    <li> <a href="{{ route('home') }}">Home</a> </li>
+                    <li> <a href="<?php echo e(route('home')); ?>">Home</a> </li>
 
-                    <li> <a href="{{ route('home.service_categories') }}">Service Category</a>
+                    <li> <a href="<?php echo e(route('home.service_categories')); ?>">Service Category</a>
                         <ul class="drop-down one-column hover-fade">
                             <li><a href="http://localhost:8000/disinfection/services">Disinfection</a></li>
                             <li><a href="http://localhost:8000/Electrician/services">Electrician</a></li>
@@ -111,7 +109,7 @@
                         </ul>
 
                     </li>
-                    <li><a href="{{ route('home.contact') }}">Contact Us</a></li>
+                    <li><a href="<?php echo e(route('home.contact')); ?>">Contact Us</a></li>
                     <li>
                         <center>
                             <div class="trans-section">
@@ -240,58 +238,59 @@
                             </div>
                         </center>
                     </li>
-                    @if (Route::has('login'))
-                        @auth
-                            @if (Auth::user()->u_type === 'ADM')
+                    <?php if(Route::has('login')): ?>
+                        <?php if(auth()->guard()->check()): ?>
+                            <?php if(Auth::user()->u_type === 'ADM'): ?>
                                 <li class="login-form"><a href="#" title="Register"> <i class="fa fa-user"
                                             aria-hidden="true">
-                                            {{ Auth::user()->name }}(Admin)</i></a>
+                                            <?php echo e(Auth::user()->name); ?>(Admin)</i></a>
                                     <ul class="drop-down one-column hover-fade">
 
-                                        <li><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                                        <li><a href="{{ route('logout') }}"
+                                        <li><a href="<?php echo e(route('admin.dashboard')); ?>">Dashboard</a></li>
+                                        <li><a href="<?php echo e(route('logout')); ?>"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                         </li>
                                     </ul>
                                 </li>
-                            @elseif(Auth::user()->u_type === 'SPV')
+                            <?php elseif(Auth::user()->u_type === 'SPV'): ?>
                                 <li class="login-form"><a href="#" title="Register"><i class="fa fa-user"
                                             aria-hidden="true">
-                                            {{ Auth::user()->name }} ( @if (Auth::user()->service_category_id)
-                                                {{ Auth::user()->category->name }}
-                                            @endif
+                                            <?php echo e(Auth::user()->name); ?> ( <?php if(Auth::user()->service_category_id): ?>
+                                                <?php echo e(Auth::user()->category->name); ?>
+
+                                            <?php endif; ?>
                                             )</i></a>
                                     <ul class="drop-down one-column hover-fade">
-                                        <li><a href="{{ route('sprovider.dashboard') }}"><strong>Dashboard</strong></a>
+                                        <li><a href="<?php echo e(route('sprovider.dashboard')); ?>"><strong>Dashboard</strong></a>
                                         </li>
-                                        <li><a href="{{ route('logout') }}"
+                                        <li><a href="<?php echo e(route('logout')); ?>"
                                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                         </li>
                                     </ul>
                                 </li>
-                            @else
+                            <?php else: ?>
                                 <li class="login-form"><a href="#" title="Register"> <i class="fa fa-user"
                                             aria-hidden="true">
-                                            {{ Auth::user()->name }}(Customer)</i></a>
+                                            <?php echo e(Auth::user()->name); ?>(Customer)</i></a>
                                     <ul class="drop-down one-column hover-fade">
-                                        <li><a href="{{ route('customer.dashboard') }}">Dashboard</a></li>
-                                        <li><a href="{{ route('logout') }}"
+                                        <li><a href="<?php echo e(route('customer.dashboard')); ?>">Dashboard</a></li>
+                                        <li><a href="<?php echo e(route('logout')); ?>"
                                                 onclick="event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        document.getElementById('logout-form').submit();">Logout</a>
+                                                                                                                                                                                                                                                                                                                                                                document.getElementById('logout-form').submit();">Logout</a>
                                         </li>
                                     </ul>
                                 </li>
-                            @endif
-                            <form action="{{ route('logout') }}" method="POST" id="logout-form" style="display: none">
-                                @csrf
+                            <?php endif; ?>
+                            <form action="<?php echo e(route('logout')); ?>" method="POST" id="logout-form" style="display: none">
+                                <?php echo csrf_field(); ?>
                             </form>
-                        @else
-                            <li class="login-form"> <a href="{{ route('register') }}" title="Register">Register</a>
+                        <?php else: ?>
+                            <li class="login-form"> <a href="<?php echo e(route('register')); ?>" title="Register">Register</a>
                             </li>
-                            <li class="login-form "> <a href="{{ route('login') }}" class=""
+                            <li class="login-form "> <a href="<?php echo e(route('login')); ?>" class=""
                                     title="Login">Login</a></li>
-                        @endif
-                        @endif
+                        <?php endif; ?>
+                        <?php endif; ?>
                         <li class="search-bar" style="margin-top:5px"></li>
                     </ul>
                 </nav>
@@ -329,6 +328,7 @@
                 delay: 100,
             });
         </script>
-        {{-- alan Ai --}}
+        
         <script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
-        <script type="text/javascript" src="{{ url('js/alan.js') }}"></script>
+        <script type="text/javascript" src="<?php echo e(url('js/alan.js')); ?>"></script>
+<?php /**PATH C:\Users\cws\Documents\Master Laravel Project\Total-Services\resources\views/frontend/layouts/header.blade.php ENDPATH**/ ?>
