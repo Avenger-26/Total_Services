@@ -8,16 +8,6 @@ use Livewire\Component;
 class AdminUsersComponent extends Component
 {
 
-    // public function deleteUser($id)
-    // {
-    //     $user = User::find($id);
-    //     if ($user->image) {
-    //         unlink('images/sproviders' . '/' . $user->image);
-    //     }
-    //     $user->delete();
-    //     session()->flash('message', 'User has been deleted successfully!');
-    // }
-
     public function deleteUser($id)
     {
         $user = User::find($id);

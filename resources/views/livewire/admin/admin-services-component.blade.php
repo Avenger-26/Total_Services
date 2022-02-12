@@ -3,7 +3,7 @@
         .w-5 {
             display: none;
         }
-    
+
     </style>
     @include('../../layouts/admin/header')
     <div class="main-panel">
@@ -39,7 +39,8 @@
                                                 });
                                             </script>
                                         @endif
-                                        <table class="table text-center table-responsive table-striped table-hover shadow">
+                                        <table
+                                            class="table text-center table-responsive table-striped table-hover shadow">
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
@@ -49,7 +50,7 @@
                                                     <th>Status</th>
                                                     <th>Featured</th>
                                                     <th>Category</th>
-                                                    <th>Created At</th>
+                                                    <th>Date</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -91,10 +92,12 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
-                                        {{ $services->links('pagination.custom') }}
-                                        <div class="Export-btn">
+
+                                        <div class="Export-btn ml-2">
+                                            {{ $services->links('pagination.custom') }}
                                             <a href="{{ route('admin.export_all_services') }}"
-                                                class="btn btn-success pull-left ml-2">Export Data</a>
+                                                class="btn btn-success pull-left ml-2">Export Data <i
+                                                    class="fa fa-file-excel-o" aria-hidden="true"></i></a>
                                         </div>
 
                                     </div>
@@ -107,16 +110,6 @@
             </div>
         </div>
         <!-- END : End Main Content-->
-
-        <!-- BEGIN : Footer-->
-        <footer class="footer footer-static footer-light">
-            <p class="clearfix text-muted text-sm-center px-2"><span>Copyright &copy; 2021 <a
-                        href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink"
-                        target="_blank" class="text-bold-800 primary darken-2">Team 26 </a>, All rights
-                    reserved. </span></p>
-        </footer>
-        <!-- End : Footer-->
-
     </div>
 </div>
 
@@ -127,18 +120,24 @@
             title: event.detail.title,
             text: event.detail.text,
             icon: event.detail.type,
-            buttons: true,
-            dangerMode: true,
             showCancelButton: event.detail.showCancelButton,
             confirmButtonColor: event.detail.confirmButtonColor,
             cancelButtonColor: event.detail.cancelButtonColor,
-            confirmButtonText: event.detail.confirmButtonText,
-        }).then((willDelete) => {
-            if (willDelete) {
 
-                window.livewire.emit('delete', event.detail.id);
+        }).then((result) => {
+            if (result.isConfirmed) {
 
+                window.livewire.emit('delete', event.detail.id)
+            } else if (
+
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                Swal.fire(
+                    'Cancelled',
+                    'Your Data is safe ',
+                    'error'
+                );
             }
-        });
+        })
     });
 </script>

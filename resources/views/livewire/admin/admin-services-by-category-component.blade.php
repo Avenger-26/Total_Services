@@ -33,7 +33,8 @@
                                                 });
                                             </script>
                                         @endif
-                                        <table class="table text-center table-responsive table-striped table-hover shadow">
+                                        <table
+                                            class="table text-center table-responsive table-striped table-hover shadow">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
@@ -90,9 +91,9 @@
                                                 @endif
                                             </tbody>
                                         </table>
-                                       
-                                            {{ $services->links('pagination.custom') }}
-                                
+
+                                        {{ $services->links('pagination.custom') }}
+
 
 
                                     </div>
@@ -105,16 +106,6 @@
             </div>
         </div>
         <!-- END : End Main Content-->
-
-        <!-- BEGIN : Footer-->
-        <footer class="footer footer-static footer-light">
-            <p class="clearfix text-muted text-sm-center px-2"><span>Copyright &copy; 2021 <a
-                        href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink"
-                        target="_blank" class="text-bold-800 primary darken-2">Team 26 </a>, All rights
-                    reserved. </span></p>
-        </footer>
-        <!-- End : Footer-->
-
     </div>
 </div>
 <style>
@@ -130,18 +121,24 @@
             title: event.detail.title,
             text: event.detail.text,
             icon: event.detail.type,
-            buttons: true,
-            dangerMode: true,
             showCancelButton: event.detail.showCancelButton,
             confirmButtonColor: event.detail.confirmButtonColor,
             cancelButtonColor: event.detail.cancelButtonColor,
-            confirmButtonText: event.detail.confirmButtonText,
-        }).then((willDelete) => {
-            if (willDelete) {
 
-                window.livewire.emit('delete', event.detail.id);
+        }).then((result) => {
+            if (result.isConfirmed) {
 
+                window.livewire.emit('delete', event.detail.id)
+            } else if (
+
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                Swal.fire(
+                    'Cancelled',
+                    'Your Data is safe ',
+                    'error'
+                );
             }
-        });
+        })
     });
 </script>

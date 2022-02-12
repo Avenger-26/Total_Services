@@ -28,13 +28,13 @@
                     <ul class="services-lines full-services shadow-lg">
                         @foreach ($scategories as $scategory)
                             <li>
-                                <div class="item-service-line shadow-lg">
+                                <div class="item-service-line shadow-lg" data-aos="zoom-in">
                                     <i class="fa"><a
                                             href="{{ route('home.services_by_category', ['category_slug' => $scategory->slug]) }}"><img
-                                                class="icon-img" height="80px" width="80px" data-aos="zoom-in"
+                                                class="icon-img" height="80px" width="80px" data-aos=""
                                                 src="{{ asset('images/services-categories') }}/{{ $scategory->image }}"
                                                 alt="{{ $scategory->name }}"></a></i>
-                                    <h5 data-aos="zoom-in">{{ $scategory->name }}</h5>
+                                    <h5>{{ $scategory->name }}</h5>
                                 </div>
                             </li>
                         @endforeach

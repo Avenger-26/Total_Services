@@ -1,12 +1,4 @@
-<style>
-    /* table td{
-        line-height:80px;
-    } */
-
-</style>
-
 <div>
-    <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
     @include('../../layouts/admin/header')
     <div class="main-panel">
         <!-- BEGIN : Main Content-->
@@ -48,7 +40,6 @@
                                                 <th>Email</th>
                                                 <th>Phone</th>
                                                 <th>Location</th>
-                                                {{-- <th>Action</th> --}}
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -73,23 +64,17 @@
                                                     <td>{{ $user->phone }}</td>
 
                                                     <td>{{ $user->address }}</td>
-                                                    {{-- <td>
 
-
-                                                                <a href="#"
-                                                                    onclick="confirm('Are you sure, you want to delete this User!')||event.stopImmediatePropagation()"
-                                                                    wire:click.prevent="deleteUser({{ $user->id  }})"
-                                                                    style="margin-left:10px"><i
-                                                                        class="fa fa-trash  text-danger mt-3 font-medium-5 mr-2"></i></a>
-                                                            </td> --}}
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    {{ $users->links('pagination.custom') }}
-                                    <div class="Export-btn">
+
+                                    <div class="Export-btn ml-2">
+                                        {{ $users->links('pagination.custom') }}
                                         <a href="{{ route('admin.export_customer') }}"
-                                            class="btn btn-success pull-left ml-1">Export Data</a>
+                                            class="btn btn-success pull-left ml-1 ">Export Data <i
+                                                class="fa fa-file-excel-o" aria-hidden="true"></i></a>
                                     </div>
 
 
@@ -103,16 +88,6 @@
         </div>
     </div>
     <!-- END : End Main Content-->
-
-    <!-- BEGIN : Footer-->
-    <footer class="footer footer-static footer-light">
-        <p class="clearfix text-muted text-sm-center px-2"><span>Copyright &copy; 2021 <a
-                    href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink"
-                    target="_blank" class="text-bold-800 primary darken-2">Team 26 </a>, All rights
-                reserved. </span></p>
-    </footer>
-    <!-- End : Footer-->
-
 </div>
 </div>
 <style>

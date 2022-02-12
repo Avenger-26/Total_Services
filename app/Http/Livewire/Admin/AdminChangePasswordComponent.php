@@ -37,18 +37,5 @@ class AdminChangePasswordComponent extends Component
             return redirect()->back();
         }
     }
-    // if (Hash::check($request->current_password, Auth::user()->password)) {
-
-    //     if ($request->new_password === $request->confirm_password) {
-    //         $user = User::findOrFail(Auth::user()->id);
-    //         $user->password = Hash::make($request->new_password);
-    //         $user->save();
-    //         // return redirect('doctor/doctor_change_password')->with('status', 'Password Changed Successfully');
-    //         session()->flash('status', 'Password Changed Successfully');
-    //     } else {
-    //         return redirect()->back()->with('status', 'New Password and  Confirm Password not matched ');
-    //     }
-    // } else {
-    //     return redirect()->route('doctor.doctor_change_password')->with('status', 'Password does not change');
-    // }
+    
 }

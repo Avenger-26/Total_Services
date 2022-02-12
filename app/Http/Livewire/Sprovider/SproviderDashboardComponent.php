@@ -9,15 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class SproviderDashboardComponent extends Component
 {
-    // public function deleteService($id)
-    // {
-    //     $paytm = Paytm::find($id);
-    //     if ($paytm->slug_image) {
-    //         unlink('images/services' . '/' . $paytm->slug_image);
-    //     }
-    //     $paytm->delete();
-    //     session()->flash('message', 'Service has been deleted successfully!');
-    // }
     public function render()
     {
         $paytms = Paytm::paginate(5);

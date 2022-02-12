@@ -38,7 +38,7 @@ class AdminUpdateProfileComponent extends Component
         $admin->email = $this->email;
         if ($this->newimage) {
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->getClientOriginalName();
-            $this->newimage->storeAs('sproviders', $imageName);
+            $this->newimage->storeAs('sproviders', $imageName, 'uploads');
             $admin->image = $imageName;
         }
         $admin->phone = $this->phone;

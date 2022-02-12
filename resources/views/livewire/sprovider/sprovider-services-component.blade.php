@@ -78,13 +78,10 @@
                                                                 <a title="Edit"
                                                                     href="{{ route('sprovider.edit_service', ['service_slug' => $service->slug]) }}"><i
                                                                         class="ft-edit fa-2x mr-2   text-info"></i></a>
-                                                                {{-- <a href="#" title="Delete"
-                                                          onclick="confirm('Are you sure, you want to delete this service category!')||event.stopImmediatePropagation()"
-                                                          wire:click.prevent="deleteService({{ $service->id }})"><i
-                                                              class="ft-trash-2 fa-1x mr-2  text-danger"></i></a> --}}
-                                                              <a type="button" title="Delete" class=""
-                                                              wire:click="deleteConfirm({{ $service->id }})"><i
-                                                                  class="ft-trash-2 fa-2x mr-2  text-danger"></i></a>
+
+                                                                <a type="button" title="Delete" class=""
+                                                                    wire:click="deleteConfirm({{ $service->id }})"><i
+                                                                        class="ft-trash-2 fa-2x mr-2  text-danger"></i></a>
 
                                                             </td>
                                                         </tr>
@@ -101,10 +98,13 @@
 
                                         </tbody>
                                         </table>
-                                        {{ $services->links('pagination.custom') }}
-                                        <div class="Export-btn">
+
+                                        <div class="Export-btn ml-2">
+                                            {{ $services->links('pagination.custom') }}
                                             <a href="{{ route('sprovicer.export_all_services') }}"
-                                                class="btn btn-success pull-left ml-2">Export Data</a>
+                                                class="btn btn-success pull-left ml-2">Export Data
+                                                <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+                                            </a>
                                         </div>
 
 
@@ -136,18 +136,24 @@
             title: event.detail.title,
             text: event.detail.text,
             icon: event.detail.type,
-            buttons: true,
-            dangerMode: true,
             showCancelButton: event.detail.showCancelButton,
             confirmButtonColor: event.detail.confirmButtonColor,
             cancelButtonColor: event.detail.cancelButtonColor,
-            confirmButtonText: event.detail.confirmButtonText,
-        }).then((willDelete) => {
-            if (willDelete) {
 
-                window.livewire.emit('delete', event.detail.id);
+        }).then((result) => {
+            if (result.isConfirmed) {
 
+                window.livewire.emit('delete', event.detail.id)
+            } else if (
+
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                Swal.fire(
+                    'Cancelled',
+                    'Your Data is safe ',
+                    'error'
+                );
             }
-        });
+        })
     });
 </script>

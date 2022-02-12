@@ -7,34 +7,19 @@
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-
         var data = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
             <?php echo $chartData; ?>
         ]);
-
         var options = {
-
             is3D: true,
             pieHole: 0.4,
-
-
         };
-
-
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-
         chart.draw(data, options);
     }
 </script>
-
-
-
-
-
 <div>
-
     @include('../../layouts/admin/header')
     <div class="main-panel">
         <!-- BEGIN : Main Content-->
@@ -42,7 +27,7 @@
             <div class="content-wrapper">
                 <!--Statistics cards Starts-->
                 <div class="row">
-                    <div class="col-xl-3 col-lg-3 col-md-3 col-11 mx-auto">
+                    <div class="col-md-6 col-sm-11 h-100">
                         <div class="card gradient-blackberry dynamic-cards shadow">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
@@ -63,7 +48,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-11 mx-auto">
+                    <div class="col-md-6 col-sm-11 h-100">
                         <div class="card gradient-ibiza-sunset dynamic-cards shadow"
                             wire:click="location.href='/admin/service-provider'">
                             <div class="card-content">
@@ -84,7 +69,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-11 mx-auto">
+                    <div class="col-md-6 col-sm-11 h-100">
                         <div class="card gradient-green-tea shadow dynamic-cards">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
@@ -106,7 +91,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-11 mx-auto">
+                    <div class="col-md-6 col-sm-11 h-100">
                         <div class="card gradient-pomegranate shadow dynamic-cards">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
@@ -185,13 +170,10 @@
                                 <table class="table text-center  table-striped table-hover shadow ">
                                     <thead>
                                         <tr>
-
-
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
                                             <th>Location</th>
-
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -217,7 +199,6 @@
                                                 </td>
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->phone }}</td>
-
                                                 <td>{{ $user->address }}</td>
                                             </tr>
                                         @endforeach
@@ -242,7 +223,6 @@
 
                                 </div>
                             </div>
-
                             <div class="card-content">
                                 <div class="">
                                     <table class="table text-center table-striped table-hover shadow">
@@ -258,7 +238,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-
                                             @foreach ($contacts as $contact)
                                                 <tr>
                                                     <td><span
@@ -275,17 +254,13 @@
                                                     </td>
                                                 </tr>
                                             @endforeach
-
-
                                         </tbody>
                                     </table>
                                     <div class="Export-btn">
                                         <a href="{{ route('admin.export_contacts') }}"
-                                            class="btn btn-success pull-right mx-3">Export Data</a>
+                                            class="btn btn-success pull-right mx-3">Export Data <i
+                                                class="fa fa-file-excel-o" aria-hidden="true"></i></a>
                                     </div>
-
-
-
                                 </div>
                             </div>
                         </div>
@@ -303,10 +278,8 @@
 
                             </div>
                         </div>
-
                         <div class="card-content ">
                             <div class="">
-
                                 @if (Session::has('message'))
                                     <div class="alert alert-success" role="alert">
                                         {{ Session::get('message') }}
@@ -330,21 +303,28 @@
                                                 <td><span
                                                         class="badge badge-success mt-3">#SP0{{ $sprovider->id }}</span>
                                                 </td>
-                                                <td><img class="rounded-circle img-border gradient-summer  "
-                                                        src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
-                                                        width="80" height="80" alt=""></td>
+                                                <td>
+                                                    @if ($sprovider->image)
+                                                        <img src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
+                                                            width="80" height="80" alt=""
+                                                            class="rounded-circle img-border gradient-summer">
+
+                                                    @else
+                                                        <img src="{{ asset('images/sproviders/default.jpg') }}"
+                                                            alt="" class="rounded-circle img-border gradient-summer "
+                                                            width="80" height="80" />
+                                                    @endif
+
+                                                </td>
                                                 <td>{{ $sprovider->name }}</td>
                                                 <td>
                                                     @if ($sprovider->service_category_id)
                                                         {{ $sprovider->category->name }}
                                                     @endif
-
                                                 </td>
                                                 <td>{{ $sprovider->phone }}</td>
                                                 <td>{{ $sprovider->address }}</td>
                                                 <td>
-
-                                                    {{-- <a href="{{ route('admin.edit_service_categories', ['category_id' => $sprovider->id]) }}"><i class="ft-edit font-medium-5 mr-2"></i></a> --}}
                                                     <a href="#"
                                                         onclick="confirm('Are you sure, you want to delete this service Provider!')||event.stopImmediatePropagation()"
                                                         wire:click.prevent="deleteServiceProvider({{ $sprovider->id }})"
@@ -358,11 +338,9 @@
 
                                 <div class="Export-btn">
                                     <a href="{{ route('admin.export_service_provider') }}"
-                                        class="btn btn-success pull-right mx-3">Export Data</a>
+                                        class="btn btn-success pull-right mx-3">Export Data <i
+                                            class="fa fa-file-excel-o" aria-hidden="true"></i></a>
                                 </div>
-
-
-
                             </div>
                         </div>
                     </div>
@@ -371,16 +349,11 @@
         </div>
 
     </div>
-
     <!-- END : End Main Content-->
-
-
-
 </div>
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script type="text/javascript">
     var users = <?php echo json_encode($new_users); ?>;
-
     Highcharts.chart('container', {
         title: {
             text: 'New Users Growth - 2022'
@@ -424,5 +397,32 @@
                 }
             }]
         }
+    });
+</script>
+<script>
+    window.addEventListener('Swal.fire:confirm', event => {
+        Swal.fire({
+            title: event.detail.title,
+            text: event.detail.text,
+            icon: event.detail.type,
+            showCancelButton: event.detail.showCancelButton,
+            confirmButtonColor: event.detail.confirmButtonColor,
+            cancelButtonColor: event.detail.cancelButtonColor,
+
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                window.livewire.emit('delete', event.detail.id)
+            } else if (
+
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                Swal.fire(
+                    'Cancelled',
+                    'Your Data is safe ',
+                    'error'
+                );
+            }
+        })
     });
 </script>

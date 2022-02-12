@@ -27,7 +27,7 @@ class EditSproviderProfileComponent extends Component
 
     public function mount()
     {
-        $sprovider = User::where('id',Auth::user()->id)->first();
+        $sprovider = User::where('id', Auth::user()->id)->first();
         $this->service_provider_id = $sprovider->id;
         $this->name = $sprovider->name;
         $this->email = $sprovider->email;
@@ -42,14 +42,13 @@ class EditSproviderProfileComponent extends Component
     public function updateProfile()
     {
 
-      
+
 
         $sprovider = User::where('id', Auth::user()->id)->first();
-        if ($this->newimage) 
-        { 
+        if ($this->newimage) {
 
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->getClientOriginalName();
-            $this->newimage->storeAs('sproviders', $imageName);
+            $this->newimage->storeAs('sproviders', $imageName, 'uploads');
             $sprovider->image = $imageName;
         }
         $sprovider->name = $this->name;
@@ -59,13 +58,13 @@ class EditSproviderProfileComponent extends Component
         $sprovider->address = $this->address;
         $sprovider->service_category_id = $this->service_category_id;
         $sprovider->slug_id = $this->slug_id;
-        $sprovider ->save();
+        $sprovider->save();
         session()->flash('message', 'Profile has been updated successfully !');
     }
     public function render()
     {
         $scategories = ServiceCategory::all();
         $services = Service::all();
-        return view('livewire.sprovider.edit-sprovider-profile-component',['scategories'=>$scategories,'services'=>$services])->layout('FrontEnd.layouts.guest');
+        return view('livewire.sprovider.edit-sprovider-profile-component', ['scategories' => $scategories, 'services' => $services])->layout('FrontEnd.layouts.guest');
     }
 }

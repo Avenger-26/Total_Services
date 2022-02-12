@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Livewire\Sprovider;
+
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Service;
@@ -29,15 +30,15 @@ class SproviderAddServicesComponent extends Component
 
     public function generateSlug()
     {
-        $this->slug = Str::slug($this->name,'-');
+        $this->slug = Str::slug($this->name, '-');
     }
-    
+
     public function updated($feilds)
     {
-        $this->validateOnly($feilds,[
-            'name'=> 'required',
+        $this->validateOnly($feilds, [
+            'name' => 'required',
             'slug' => 'required',
-            'tagline'=> 'required',
+            'tagline' => 'required',
             'service_category_id' => 'required',
             'price' => 'required',
             'image' => 'required|mimes:jpeg,png',
@@ -50,9 +51,9 @@ class SproviderAddServicesComponent extends Component
     public function createService()
     {
         $this->validate([
-            'name'=> 'required',
+            'name' => 'required',
             'slug' => 'required',
-            'tagline'=> 'required',
+            'tagline' => 'required',
             'service_category_id' => 'required',
             'price' => 'required',
             'image' => 'required|mimes:jpeg,png',
@@ -60,7 +61,7 @@ class SproviderAddServicesComponent extends Component
             'description' => 'required',
             'inclusion' => 'required',
             'exclusion' => 'required',
-        
+
         ]);
 
         $service = new Service();
@@ -78,20 +79,20 @@ class SproviderAddServicesComponent extends Component
         $service->sprovider_id = Auth::user()->id;
 
         $imageName = Carbon::now()->timestamp . '.' . $this->thumbnail->getClientOriginalName();
-        $this->thumbnail->storeAs('services/thumbnails', $imageName);
+        $this->thumbnail->storeAs('services/thumbnails', $imageName, 'uploads');
         $service->thumbnail = $imageName;
 
         $imageName2 = Carbon::now()->timestamp . '.' . $this->image->getClientOriginalName();
-        $this->image->storeAs('services', $imageName2);
+        $this->image->storeAs('services', $imageName2, 'uploads');
         $service->image = $imageName2;
 
         $service->save();
         session()->flash('message', 'Service has been created successfully!');
-    }   
+    }
     public function render()
     {
         $categories = ServiceCategory::all();
         $sproviders = User::all();
-        return view('livewire.sprovider.sprovider-add-services-component',['categories'=>$categories,'sproviders'=>$sproviders])->layout('frontend.layouts.guest');
+        return view('livewire.sprovider.sprovider-add-services-component', ['categories' => $categories, 'sproviders' => $sproviders])->layout('frontend.layouts.guest');
     }
 }

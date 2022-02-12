@@ -29,7 +29,7 @@ class AdminAddServiceComponent extends Component
     {
         $this->slug = Str::slug($this->name,'-');
     }
-    
+
     public function updated($feilds)
     {
         $this->validateOnly($feilds,[
@@ -58,7 +58,7 @@ class AdminAddServiceComponent extends Component
             'description' => 'required',
             'inclusion' => 'required',
             'exclusion' => 'required'
-        
+
         ]);
 
         $service = new Service();
@@ -74,11 +74,11 @@ class AdminAddServiceComponent extends Component
         $service->exclusion = str_replace("\n",'|',trim($this->exclusion));
 
         $imageName = Carbon::now()->timestamp . '.' . $this->thumbnail->getClientOriginalName();
-        $this->thumbnail->storeAs('services/thumbnails', $imageName);
+        $this->thumbnail->storeAs('services/thumbnails', $imageName, 'uploads');
         $service->thumbnail = $imageName;
 
         $imageName2 = Carbon::now()->timestamp . '.' . $this->image->getClientOriginalName();
-        $this->image->storeAs('services', $imageName2);
+        $this->image->storeAs('services', $imageName2, 'uploads');
         $service->image = $imageName2;
 
         $service->save();

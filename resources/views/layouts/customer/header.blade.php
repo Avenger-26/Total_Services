@@ -13,8 +13,10 @@
     <!-- main menu header-->
     <!-- Sidebar Header starts-->
     <div class="sidebar-header ">
-        <div class="logo clearfix"><a href="/" class="logo-text font-weight-bolder float-left">
-                <span class="text align-left">Totat Services</span>
+        <div class="logo clearfix"><a href="/" class="text-white">
+                <div class="logo-img ">
+                    <h4>VS Home Services</h4>
+                </div>
             </a>
             <a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i
                     data-toggle="expanded" class="toggle-icon ft-toggle-right"></i></a><a id="sidebarClose"
@@ -29,7 +31,7 @@
         <div class="nav-container">
             <ul id="main-menu-navigation" data-menu="menu-navigation" data-scroll-to-active="true"
                 class="navigation navigation-main">
-                <li class=" nav-item"><a href="{{ route('customer.dashboard') }}" class="font-weight-bold"><i
+                <li class=" nav-item"><a href="{{ route('customer.dashboard') }}" class=""><i
                             class="ft-home"></i><span data-i18n="" class="">Dashboard</span></a>
                 </li>
                 <li class=" nav-item"><a href="{{ route('customer.profile') }}"><i
@@ -104,6 +106,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-faded header-navbar">
         <div class="container-fluid">
             <div class="navbar-header">
+                <h5 class="text-center mt-4 ml-md-5 text-info font-weight-bolder">User Dashboard</h5>
                 <button type="button" data-toggle="collapse" class="navbar-toggle d-lg-none float-left"><span
                         class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
                         class="icon-bar"></span><span class="icon-bar"></span></button><span
@@ -116,6 +119,7 @@
             <div class="navbar-container">
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav">
+
                         <li class="nav-item mr-2 d-none d-lg-block"><a id="navbar-fullscreen" href="javascript:;"
                                 class="nav-link apptogglefullscreen"><i
                                     class="ft-maximize font-medium-3 blue-grey darken-4"></i>
