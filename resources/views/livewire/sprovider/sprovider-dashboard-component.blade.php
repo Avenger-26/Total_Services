@@ -157,6 +157,11 @@
                                                                     <a type="button" title="Delete" class=""
                                                                     wire:click="deleteConfirm({{ $paytm->id }})"><i
                                                                         class="ft-trash-2 fa-2x mr-2  text-danger"></i></a>
+
+                                                                    {{-- <a type="button" title="Delete"
+                                                                        class=""
+                                                                        wire:click="deleteConfirm({{ $paytm->id }})"><i
+                                                                            class="ft-trash-2 fa-2x mr-2  text-primary"></i></a> --}}
                                                                 </td>
                                                             </tr>
                                                         @endif
@@ -173,7 +178,7 @@
 
                                             </tbody>
                                         </table>
-                                        {{$paytms->links('pagination.custom') }}
+                                        {{ $paytms->links('pagination.custom') }}
                                         <div class="Export-btn">
                                             <a href="{{ route('sprovicer.export_work_history') }}"
                                                 class="btn btn-success pull-left ml-2">Export Data</a>

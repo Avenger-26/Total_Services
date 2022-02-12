@@ -82,8 +82,8 @@
 
                 <ul class="collapse">
                     <li class="title">
-                        <a href="/"><img height="50px" class="img-fluid"
-                                src="{{ asset('assets\img\m-logo.png') }}" alt="logo"></a>
+                        <a href="/"><img src="{{ asset('assets\img\logo.png') }}" alt="logo"
+                            style="filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.3));width:160px;margin-bottom:5px"></a>
 
                         {{-- <a href="/">On~Demand Services</a> --}}
                     </li>
@@ -292,8 +292,7 @@
                                     title="Login">Login</a></li>
                         @endif
                         @endif
-                        <li class="search-bar">
-                        </li>
+                        <li class="search-bar" style="margin-top:5px"></li>
                     </ul>
                 </nav>
 

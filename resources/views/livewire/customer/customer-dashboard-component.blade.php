@@ -106,6 +106,12 @@
                                                                 wire:click.prevent="deleteService({{ $paytm->id }})">
                                                                 <i class="ft-trash-2 text-danger font-medium-3"></i>
                                                             </a>
+                                                            <a href="#"
+                                                                onclick="confirm('Are you sure, you want to cancel this service')||event.stopImmediatePropagation()"
+                                                                wire:click.prevent="deleteService({{ $paytm->id }})">
+                                                                <i class="
+                                                                ft-x text-seconuday font-medium-3"></i>
+                                                            </a>
                                                         </td>
                                                     </tr>
                                                 @endif

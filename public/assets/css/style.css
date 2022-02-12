@@ -868,6 +868,7 @@ hr.tall {
 /* Title Header ---------------------------------------------*/
 .title-header {
     text-align: center;
+    margin-top: 8.5rem;
 }
 
 .title-header h1 {

@@ -6,59 +6,65 @@
                 <div class="position-absolute top-0 start-0 w-100  d-flex align-items-center"
                     style="background: rgba(53, 53, 53, .7);">
                 </div>
-                <div class="filter-title">
-                    <div class="title-header">
-                        <h1 style="" style="color:#1597e5;">Welcome To VS Home Services </h1>
-                        <p class="lead">Book On Demand Home Services On Your Finger Tip</p>
+               
+                    <div class="filter-title">
+                        <div class="title-header">
+                            <h1 style="" style="color:#1597e5;">Welcome To VS Home Services </h1>
+                            <p class="lead">Book On Demand Home Services On Your Finger Tip</p>
 
-                    </div>
+                        </div>
 
-                    @if (Route::has('login'))
-                        @auth
-                            @if (Auth::user()->u_type === 'ADM')
-                            <div class="filter-header">
-                                <form id="sform" action="{{ route('searchService') }}" method="post">
-                                    @csrf
-                                    <input type="text" id="q" name="q" required="required"
-                                        placeholder="What Services do you want?" class="input-large typeahead"
-                                        autocomplete="off">
-                                    <button type="submit" name="submit" value="Search" class="search "> Search
-                                    </button>
-                                </form>
-                            </div>
-                            @elseif(Auth::user()->u_type === 'SPV')
-                            <div class="filter-header">
-                                <form id="sform" action="{{ route('searchService') }}" method="post">
-                                    @csrf
-                                    <input type="text" id="q" name="q" required="required"
-                                        placeholder="What Services do you want?" class="input-large typeahead"
-                                        autocomplete="off">
-                                    <button type="submit" name="submit" value="Search" class="search "> Search
-                                    </button>
-                                </form>
-                            </div>
+                        @if (Route::has('login'))
+                            @auth
+                                @if (Auth::user()->u_type === 'ADM')
+                                    <div class="filter-header">
+                                        <form id="sform" action="{{ route('searchService') }}" method="post">
+                                            @csrf
+                                            <input type="text" id="q" name="q" required="required"
+                                                placeholder="What Services do you want?" class="input-large typeahead"
+                                                autocomplete="off">
+                                            <button type="submit" name="submit" value="Search" class="search ">
+                                                Search
+                                            </button>
+                                        </form>
+                                    </div>
+                                @elseif(Auth::user()->u_type === 'SPV')
+                                    <div class="filter-header">
+                                        <form id="sform" action="{{ route('searchService') }}" method="post">
+                                            @csrf
+                                            <input type="text" id="q" name="q" required="required"
+                                                placeholder="What Services do you want?" class="input-large typeahead"
+                                                autocomplete="off">
+                                            <button type="submit" name="submit" value="Search" class="search ">
+                                                Search
+                                            </button>
+                                        </form>
+                                    </div>
+                                @else
+                                    <div class="filter-header">
+                                        <form id="sform" action="{{ route('searchService') }}" method="post">
+                                            @csrf
+                                            <input type="text" id="q" name="q" required="required"
+                                                placeholder="What Services do you want?" class="input-large typeahead"
+                                                autocomplete="off">
+                                            <button type="submit" name="submit" value="Search" class="search ">
+                                                Search
+                                            </button>
+                                        </form>
+                                    </div>
+                                @endif
                             @else
-                            <div class="filter-header">
-                                <form id="sform" action="{{ route('searchService') }}" method="post">
-                                    @csrf
-                                    <input type="text" id="q" name="q" required="required"
-                                        placeholder="What Services do you want?" class="input-large typeahead"
-                                        autocomplete="off">
-                                    <button type="submit" name="submit" value="Search" class="search "> Search
-                                    </button>
-                                </form>
-                            </div>
+                                <button type="submit" name="submit" value="Search" class="search btn-hover color-hover "
+                                    style="margin:auto; display:block; box-shadow:0px 0px 5px #000;"> <a
+                                        href="{{ route('register') }}"
+                                        style="text-decoration: none; color:white;">Register
+                                    </a>
+                                </button>
                             @endif
-                        @else
-                            <button type="submit" name="submit" value="Search" class="search btn-hover color-hover "
-                                style="margin:auto; display:block; box-shadow:0px 0px 5px #000;"> <a
-                                    href="{{ route('register') }}" style="text-decoration: none; color:white;">Register
-                                </a>
-                            </button>
-                        @endif
-                        @endif
-                    </div>
+                            @endif
+                        </div>
                 </div>
+             
                 <div class="owl-carousel-item position-relative">
                     <img class="img-fluid hero-img" src="{{ asset('images/2-1.png') }}" alt="">
                     <div class="position-absolute top-0 start-0 w-100  d-flex align-items-center"
@@ -183,10 +189,11 @@
                                 <div class="item owl-item-slider tooltip-hover" data-aos="fade-down">
                                     <a href="{{ route('home.services_by_category', ['category_slug' => $scategory->slug]) }}"><img
                                             src="{{ asset('images/services-categories') }}/{{ $scategory->image }}"
-                                            alt="{{ $scategory->name }}" data-toggle="tooltip" title="" data-original-title="{{ $scategory->name }}" ></a>
-                                    
+                                            alt="{{ $scategory->name }}" data-toggle="tooltip" title=""
+                                            data-original-title="{{ $scategory->name }}"></a>
+
                                 </div>
-                                
+
                             @endforeach
                         </div>
                     </div>
@@ -315,12 +322,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-4 ">
-                                    <div class="services-lines-info "
-                                        data-aos="zoom-in">
+                                    <div class="services-lines-info " data-aos="zoom-in">
                                         <h2 data-aos="
-                                        zoom-in">
-                                        WELCOME
-                                        TO VS Home Services</h2>
+                                                    zoom-in">
+                                            WELCOME
+                                            TO VS Home Services</h2>
                                         <p data-aos="zoom-in" class="lead">
                                             Book best services at one place.
                                             <span class="line"></span>
@@ -547,10 +553,7 @@
                     </div>
                 </div>
             </div>
-            {{-- <a href="https://api.whatsapp.com/send?phone=917071967998"
-                style="display: inline-block; padding:16px; border-radius: 8px;  #fff; text-decoration: none; font-family: sans-serif; font-size: 16px;"><img
-                    src="https://cliply.co/wp-content/uploads/2021/08/372108180_WHATSAPP_ICON_400.gif" width="100" height="110"></a> --}}
-            <!-- Testimonial End -->
+
             </div>
             @push('scripts')
                 <script type="text/javascript">

@@ -73,7 +73,7 @@
                                                 width="100" height="100"
                                                 class="rounded-circle img-border gradient-summer my-3">
                                         @else
-                                            <img src="{{ asset('images/sproviders/default.png') }}" alt=""
+                                            <img src="{{ asset('images/sproviders/default.jpg') }}" alt=""
                                                 class="rounded-circle img-border gradient-summer width-100 my-3">
                                         @endif
 

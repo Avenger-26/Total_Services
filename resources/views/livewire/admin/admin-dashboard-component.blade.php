@@ -211,8 +211,8 @@
                                                             alt="" width="60" height="60"
                                                             class="rounded-circle img-border gradient-summer">
                                                     @else
-                                                        <img src="{{ asset('images/sproviders/default.png') }}" alt=""
-                                                            class="rounded-circle img-border gradient-summer width-100">
+                                                        <img src="{{ asset('images/sproviders/default.jpg') }}" alt=""
+                                                            class="rounded-circle img-border gradient-summer" width="60" height="60">
                                                     @endif
                                                 </td>
                                                 <td>{{ $user->email }}</td>
@@ -395,7 +395,7 @@
             text: 'New Users Growth - 2022'
         },
         subtitle: {
-            text: ' TotalService.in'
+            text: ' VSHomeService.in'
         },
         xAxis: {
             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
