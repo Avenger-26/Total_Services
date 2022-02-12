@@ -21,8 +21,13 @@
                                     </div>
                                 </div>
 
+<<<<<<< HEAD
                                 <div class="card-content">
                                     <div class="table-responsive">
+=======
+                                <div class="card-content table-responsive">
+                                    <div class="">
+>>>>>>> 31f595b7e735e00cb1ed74764b3e6310dce96bc9
                                         <table class="table text-center  table-striped table-hover shadow">
                                             <thead>
                                                 <tr>
@@ -78,9 +83,6 @@
             </div>
         </div>
         <!-- END : End Main Content-->
-
-        <!-- BEGIN : Footer-->
-     
 
     </div>
 

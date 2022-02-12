@@ -27,7 +27,7 @@
                                     </div>
                                 </div>
 
-                                <div class="card-content">
+                                <div class="card-content table-responsive">
                                     <div class="">
 
                                         @if (Session::has('message'))
@@ -39,8 +39,7 @@
                                                 });
                                             </script>
                                         @endif
-                                        <table
-                                            class="table text-center table-responsive table-striped table-hover shadow">
+                                        <table class="table text-center  table-striped table-hover shadow">
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>

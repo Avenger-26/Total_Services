@@ -16,41 +16,38 @@
                     @if (Route::has('login'))
                         @auth
                             @if (Auth::user()->u_type === 'ADM')
-                                <div class="filter-header">
-                                    <form id="sform" action="{{ route('searchService') }}" method="post">
-                                        @csrf
-                                        <input type="text" id="q" name="q" required="required"
-                                            placeholder="What Services do you want?" class="input-large typeahead"
-                                            autocomplete="off">
-                                        <button type="submit" name="submit" value="Search"
-                                            class="search btn-hover color-hover "> Search
-                                        </button>
-                                    </form>
-                                </div>
+                            <div class="filter-header">
+                                <form id="sform" action="{{ route('searchService') }}" method="post">
+                                    @csrf
+                                    <input type="text" id="q" name="q" required="required"
+                                        placeholder="What Services do you want?" class="input-large typeahead"
+                                        autocomplete="off">
+                                    <button type="submit" name="submit" value="Search" class="search "> Search
+                                    </button>
+                                </form>
+                            </div>
                             @elseif(Auth::user()->u_type === 'SPV')
-                                <div class="filter-header">
-                                    <form id="sform" action="{{ route('searchService') }}" method="post">
-                                        @csrf
-                                        <input type="text" id="q" name="q" required="required"
-                                            placeholder="What Services do you want?" class="input-large typeahead"
-                                            autocomplete="off">
-                                        <button type="submit" name="submit" value="Search"
-                                            class="search btn-hover color-hover  "> Search
-                                        </button>
-                                    </form>
-                                </div>
+                            <div class="filter-header">
+                                <form id="sform" action="{{ route('searchService') }}" method="post">
+                                    @csrf
+                                    <input type="text" id="q" name="q" required="required"
+                                        placeholder="What Services do you want?" class="input-large typeahead"
+                                        autocomplete="off">
+                                    <button type="submit" name="submit" value="Search" class="search "> Search
+                                    </button>
+                                </form>
+                            </div>
                             @else
-                                <div class="filter-header">
-                                    <form id="sform" action="{{ route('searchService') }}" method="post">
-                                        @csrf
-                                        <input type="text" id="q" name="q" required="required"
-                                            placeholder="What Services do you want?" class="input-large typeahead"
-                                            autocomplete="off">
-                                        <button type="submit" name="submit" value="Search"
-                                            class="search btn-hover color-hover  "> Search
-                                        </button>
-                                    </form>
-                                </div>
+                            <div class="filter-header">
+                                <form id="sform" action="{{ route('searchService') }}" method="post">
+                                    @csrf
+                                    <input type="text" id="q" name="q" required="required"
+                                        placeholder="What Services do you want?" class="input-large typeahead"
+                                        autocomplete="off">
+                                    <button type="submit" name="submit" value="Search" class="search "> Search
+                                    </button>
+                                </form>
+                            </div>
                             @endif
                         @else
                             <button type="submit" name="submit" value="Search" class="search btn-hover color-hover "
@@ -183,11 +180,13 @@
                     <div class="container">
                         <div class="owl-carousel owl-theme " id="client">
                             @foreach ($scategories as $scategory)
-                                <div class="item owl-item-slider mini-slider" data-aos="fade-down">
+                                <div class="item owl-item-slider tooltip-hover" data-aos="fade-down">
                                     <a href="{{ route('home.services_by_category', ['category_slug' => $scategory->slug]) }}"><img
                                             src="{{ asset('images/services-categories') }}/{{ $scategory->image }}"
-                                            alt="{{ $scategory->name }}"></a>
+                                            alt="{{ $scategory->name }}" data-toggle="tooltip" title="" data-original-title="{{ $scategory->name }}" ></a>
+
                                 </div>
+
                             @endforeach
                         </div>
                     </div>
@@ -317,12 +316,11 @@
                             <div class="row">
                                 <div class="col-md-4 ">
                                     <div class="services-lines-info "
-                                        data-aos="zoom-in"">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <h2 data-aos="
+                                        data-aos="zoom-in">
+                                        <h2 data-aos="
                                         zoom-in">
                                         WELCOME
-                                        TO TOTAL
-                                        SERVICE</h2>
+                                        TO VS Home Services</h2>
                                         <p data-aos="zoom-in" class="lead">
                                             Book best services at one place.
                                             <span class="line"></span>

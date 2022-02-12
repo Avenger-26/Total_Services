@@ -90,7 +90,6 @@
                 <div class="logo-img ">
                     <h4>VS Home Services</h4>
                 </div>
-                {{-- <span class="text align-left">Total Services</span> --}}
             </a>
             <a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i
                     data-toggle="expanded" class="toggle-icon ft-toggle-right"></i></a><a id="sidebarClose"

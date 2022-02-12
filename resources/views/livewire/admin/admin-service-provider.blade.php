@@ -21,8 +21,8 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="card-content">
-                                    <div class="card-body table-responsive">
+                                <div class="card-content table-responsive">
+                                    <div class="card-body">
                                         @if (Session::has('message'))
                                             <script>
                                                 Swal.fire({
@@ -33,7 +33,7 @@
                                             </script>
                                         @endif
                                         <table
-                                            class="table text-center table-responsive table-striped table-hover shadow ">
+                                            class="table text-center  table-striped table-hover shadow ">
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>

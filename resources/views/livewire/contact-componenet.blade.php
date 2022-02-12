@@ -29,13 +29,13 @@
                             <aside>
 
                                 <address>
-                                    <strong>Total Services.</strong><br>
+                                    <strong>VS Home Services.</strong><br>
                                     <i class="fa fa-map-marker"></i><strong>Address: </strong>Uttar Pradesh, Lucknow,
                                     India<br>
                                     <i class="fa fa-phone"></i><strong>Phone: </strong> +91-1234567890
                                 </address>
                                 <address>
-                                    <strong>Total Services Emails</strong><br>
+                                    <strong>VS Home Services Emails</strong><br>
                                     <i class="fa fa-envelope"></i><strong>Email:</strong><a
                                         href="mailto:contact@totalservices.in"> contact@totalservices.in</a><br>
                                     <i class="fa fa-envelope"></i><strong>Email:</strong><a

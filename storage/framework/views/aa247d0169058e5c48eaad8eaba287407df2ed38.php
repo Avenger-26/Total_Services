@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0" style="color: #fff">
-                    &copy; 2022 <a class="border-bottom" href="#">TOTAL SERVICES</a>, All Right Reserved.
+                    &copy; 2022 <a class="border-bottom" href="#">VS HOME SERVICES</a>, All Right Reserved.
                     Designed and Developed By <a class="border-bottom" href="#">IBM Avengers</a>
 
                 </div>

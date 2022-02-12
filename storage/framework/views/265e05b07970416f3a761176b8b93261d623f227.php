@@ -16,41 +16,38 @@
                     <?php if(Route::has('login')): ?>
                         <?php if(auth()->guard()->check()): ?>
                             <?php if(Auth::user()->u_type === 'ADM'): ?>
-                                <div class="filter-header">
-                                    <form id="sform" action="<?php echo e(route('searchService')); ?>" method="post">
-                                        <?php echo csrf_field(); ?>
-                                        <input type="text" id="q" name="q" required="required"
-                                            placeholder="What Services do you want?" class="input-large typeahead"
-                                            autocomplete="off">
-                                        <button type="submit" name="submit" value="Search"
-                                            class="search btn-hover color-hover "> Search
-                                        </button>
-                                    </form>
-                                </div>
+                            <div class="filter-header">
+                                <form id="sform" action="<?php echo e(route('searchService')); ?>" method="post">
+                                    <?php echo csrf_field(); ?>
+                                    <input type="text" id="q" name="q" required="required"
+                                        placeholder="What Services do you want?" class="input-large typeahead"
+                                        autocomplete="off">
+                                    <button type="submit" name="submit" value="Search" class="search "> Search
+                                    </button>
+                                </form>
+                            </div>
                             <?php elseif(Auth::user()->u_type === 'SPV'): ?>
-                                <div class="filter-header">
-                                    <form id="sform" action="<?php echo e(route('searchService')); ?>" method="post">
-                                        <?php echo csrf_field(); ?>
-                                        <input type="text" id="q" name="q" required="required"
-                                            placeholder="What Services do you want?" class="input-large typeahead"
-                                            autocomplete="off">
-                                        <button type="submit" name="submit" value="Search"
-                                            class="search btn-hover color-hover  "> Search
-                                        </button>
-                                    </form>
-                                </div>
+                            <div class="filter-header">
+                                <form id="sform" action="<?php echo e(route('searchService')); ?>" method="post">
+                                    <?php echo csrf_field(); ?>
+                                    <input type="text" id="q" name="q" required="required"
+                                        placeholder="What Services do you want?" class="input-large typeahead"
+                                        autocomplete="off">
+                                    <button type="submit" name="submit" value="Search" class="search "> Search
+                                    </button>
+                                </form>
+                            </div>
                             <?php else: ?>
-                                <div class="filter-header">
-                                    <form id="sform" action="<?php echo e(route('searchService')); ?>" method="post">
-                                        <?php echo csrf_field(); ?>
-                                        <input type="text" id="q" name="q" required="required"
-                                            placeholder="What Services do you want?" class="input-large typeahead"
-                                            autocomplete="off">
-                                        <button type="submit" name="submit" value="Search"
-                                            class="search btn-hover color-hover  "> Search
-                                        </button>
-                                    </form>
-                                </div>
+                            <div class="filter-header">
+                                <form id="sform" action="<?php echo e(route('searchService')); ?>" method="post">
+                                    <?php echo csrf_field(); ?>
+                                    <input type="text" id="q" name="q" required="required"
+                                        placeholder="What Services do you want?" class="input-large typeahead"
+                                        autocomplete="off">
+                                    <button type="submit" name="submit" value="Search" class="search "> Search
+                                    </button>
+                                </form>
+                            </div>
                             <?php endif; ?>
                         <?php else: ?>
                             <button type="submit" name="submit" value="Search" class="search btn-hover color-hover "
@@ -183,11 +180,13 @@
                     <div class="container">
                         <div class="owl-carousel owl-theme " id="client">
                             <?php $__currentLoopData = $scategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $scategory): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <div class="item owl-item-slider mini-slider" data-aos="fade-down">
+                                <div class="item owl-item-slider tooltip-hover" data-aos="fade-down">
                                     <a href="<?php echo e(route('home.services_by_category', ['category_slug' => $scategory->slug])); ?>"><img
                                             src="<?php echo e(asset('images/services-categories')); ?>/<?php echo e($scategory->image); ?>"
-                                            alt="<?php echo e($scategory->name); ?>"></a>
+                                            alt="<?php echo e($scategory->name); ?>" data-toggle="tooltip" title="" data-original-title="<?php echo e($scategory->name); ?>" ></a>
+
                                 </div>
+
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </div>
                     </div>
@@ -317,12 +316,11 @@
                             <div class="row">
                                 <div class="col-md-4 ">
                                     <div class="services-lines-info "
-                                        data-aos="zoom-in"">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <h2 data-aos="
+                                        data-aos="zoom-in">
+                                        <h2 data-aos="
                                         zoom-in">
                                         WELCOME
-                                        TO TOTAL
-                                        SERVICE</h2>
+                                        TO VS Home Services</h2>
                                         <p data-aos="zoom-in" class="lead">
                                             Book best services at one place.
                                             <span class="line"></span>

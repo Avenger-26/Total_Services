@@ -12,7 +12,7 @@
         <meta name="keywords"
             content="admin template, Apex admin template, dashboard template, flat admin template, responsive admin template, web app">
         <meta name="author" content="PIXINVENT">
-        <title>Total Services Dashboard</title>
+        <title>VS Home Services Dashboard</title>
         <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('app-assets/img/ico/apple-icon-60.png') }}">
         <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('app-assets/img/ico/apple-icon-76.png') }}">
         <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('app-assets/img/ico/apple-icon-120.png') }}">

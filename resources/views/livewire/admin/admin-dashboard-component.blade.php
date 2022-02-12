@@ -190,7 +190,7 @@
                                                 <td>
                                                     @if ($user->image)
                                                         <img src="{{ asset('images/customer') }}/{{ $user->image }}"
-                                                            alt="" width="100" height="100"
+                                                            alt="" width="60" height="60"
                                                             class="rounded-circle img-border gradient-summer">
                                                     @else
                                                         <img src="{{ asset('images/sproviders/default.png') }}" alt=""
@@ -312,9 +312,8 @@
                                                     @else
                                                         <img src="{{ asset('images/sproviders/default.jpg') }}"
                                                             alt="" class="rounded-circle img-border gradient-summer "
-                                                            width="80" height="80" />
+                                                            width="60" height="60" />
                                                     @endif
-
                                                 </td>
                                                 <td>{{ $sprovider->name }}</td>
                                                 <td>
@@ -415,7 +414,6 @@
                 window.livewire.emit('delete', event.detail.id)
             } else if (
 
-                result.dismiss === Swal.DismissReason.cancel
             ) {
                 Swal.fire(
                     'Cancelled',

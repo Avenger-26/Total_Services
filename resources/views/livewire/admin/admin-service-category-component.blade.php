@@ -23,7 +23,7 @@
                                     </div>
                                 </div>
 
-                                <div class="card-content">
+                                <div class="card-content table-responsive">
                                     @if (Session::has('message'))
                                         <script>
                                             Swal.fire({
@@ -99,6 +99,10 @@
     </div>
 </div>
 <!-- END : End Main Content-->
+<<<<<<< HEAD
+=======
+
+>>>>>>> 31f595b7e735e00cb1ed74764b3e6310dce96bc9
 </div>
 </div>
 <style>
