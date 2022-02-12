@@ -1,13 +1,12 @@
 <div>
     @include('../layouts/sprovider/header')
-
     <div class="main-panel">
         <!-- BEGIN : Main Content-->
         <div class="main-content">
             <div class="content-wrapper">
                 <div class="row justify-content-md-center">
                     <div class="col-md-8">
-                        <div class="card">
+                        <div class="card shadow">
                             <div class="card-header">
                                 <h4 class="card-title text-center" style="font-size:28px; font-weight:bolder"
                                     id="from-actions"><i class="fa fa-user-plus"></i>Update Profile</h4>
@@ -128,16 +127,6 @@
     </div>
 </div>
 <!-- END : End Main Content-->
-
-<!-- BEGIN : Footer-->
-<footer class="footer footer-static footer-light">
-    <p class="clearfix text-muted text-sm-center px-2"><span>Copyright &copy; 2021 <a
-                href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink" target="_blank"
-                class="text-bold-800 primary darken-2">Team 26 </a>, All rights
-            reserved. </span></p>
-</footer>
-<!-- End : Footer-->
-
 </div>
 </div>
 

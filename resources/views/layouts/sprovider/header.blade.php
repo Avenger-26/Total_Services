@@ -2,16 +2,15 @@
     <title>Service Provider Dashboar</title>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-
-<!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
 <div data-active-color="white" data-background-color="black"
     data-image="{{ asset('app-assets/img/sidebar-bg/01.jpg') }}" class="app-sidebar">
     <!-- main menu header-->
     <!-- Sidebar Header starts-->
     <div class="sidebar-header">
-        <div class="logo clearfix"><a href="/" class="logo-text float-left">
-            <div class="logo-img "><img src="{{asset('images/d-logo.png')}}" width="30" alt=""></div>
-                <span class="text align-left">Home Services</span>
+        <div class="logo clearfix"><a href="/" class="text-white">
+                <div class="logo-img ">
+                    <h4>VS Home Services</h4>
+                </div>
             </a>
             <a id="sidebarToggle" href="javascript:;" class="nav-toggle d-none d-sm-none d-md-none d-lg-block"><i
                     data-toggle="expanded" class="toggle-icon ft-toggle-right"></i></a><a id="sidebarClose"
@@ -102,7 +101,9 @@
     <!-- Navbar (Header) Starts-->
     <nav class="navbar navbar-expand-lg navbar-light bg-faded header-navbar">
         <div class="container-fluid">
+
             <div class="navbar-header">
+                <h5 class="text-center mt-4 ml-md-5 text-info font-weight-bolder">Service Provider Dashboard</h5>
                 <button type="button" data-toggle="collapse" class="navbar-toggle d-lg-none float-left"><span
                         class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
                         class="icon-bar"></span><span class="icon-bar"></span></button><span
@@ -110,9 +111,9 @@
                         href="javascript:;" class="open-navbar-container black"><i class="ft-more-vertical"></i></a></span>
 
                 <div>
-                    <h5 class="text-center mt-4">Service Provider Dashboard</h5>
 
                 </div>
+
 
             </div>
             <div class="navbar-container">

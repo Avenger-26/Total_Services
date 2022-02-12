@@ -21,8 +21,13 @@
                                     </div>
                                 </div>
 
+<<<<<<< HEAD
+                                <div class="card-content">
+                                    <div class="table-responsive">
+=======
                                 <div class="card-content table-responsive">
                                     <div class="">
+>>>>>>> 31f595b7e735e00cb1ed74764b3e6310dce96bc9
                                         <table class="table text-center  table-striped table-hover shadow">
                                             <thead>
                                                 <tr>
@@ -37,7 +42,6 @@
                                             </thead>
                                             <tbody>
                                                 @if ($contacts != null)
-
                                                     @foreach ($contacts as $contact)
                                                         <tr>
                                                             <td><span
@@ -64,7 +68,8 @@
                                         {{ $contacts->links('pagination.custom') }}
                                         <div class="Export-btn">
                                             <a href="{{ route('admin.export_contacts') }}"
-                                                class="btn btn-success pull-left ml-1">Export Data</a>
+                                                class="btn btn-success pull-left ml-3">Export Data <i
+                                                    class="fa fa-file-excel-o" aria-hidden="true"></i></a>
                                         </div>
 
 
@@ -94,18 +99,24 @@
             title: event.detail.title,
             text: event.detail.text,
             icon: event.detail.type,
-            buttons: true,
-            dangerMode: true,
             showCancelButton: event.detail.showCancelButton,
             confirmButtonColor: event.detail.confirmButtonColor,
             cancelButtonColor: event.detail.cancelButtonColor,
-            confirmButtonText: event.detail.confirmButtonText,
-        }).then((willDelete) => {
-            if (willDelete) {
 
-                window.livewire.emit('delete', event.detail.id);
+        }).then((result) => {
+            if (result.isConfirmed) {
 
+                window.livewire.emit('delete', event.detail.id)
+            } else if (
+
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                Swal.fire(
+                    'Cancelled',
+                    'Your Data is safe ',
+                    'error'
+                );
             }
-        });
+        })
     });
 </script>

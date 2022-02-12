@@ -89,11 +89,7 @@
                 <!--Basic User Details Ends-->
                 <!--About section starts-->
                 <section id="about">
-                    {{-- <div class="row">
-                            <div class="col-md-10 col-sm-11 mx-auto">
-                                <div class="content-header">About</div>
-                            </div>
-                        </div> --}}
+
                     <div class="row">
                         <div class="col-md-11 col-sm-11 mx-auto">
                             <div class="card shadow gradient-border">
@@ -102,11 +98,7 @@
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
-                                        {{-- <div class="mb-3">
-                                                <span class="text-bold-500 primary">About Me:</span>
-                                                <span class="d-block overflow-hidden">{{ $sprovider->about }}
-                                                </span>
-                                            </div> --}}
+
                                         <hr>
                                         <div class="row">
                                             <div class="col-12 col-md-6 col-lg-4">
@@ -159,7 +151,7 @@
                                                     <li class="mb-2">
                                                         <span class="text-bold-500 primary"><a><i
                                                                     class="ft-codepen font-small-3"></i>
-                                                                Provide Service</a></span>
+                                                                Services Provide</a></span>
                                                         <span class="d-block overflow-hidden">
                                                             @if ($sprovider->slug_id)
                                                                 {{ $sprovider->slug->name }}
@@ -184,16 +176,6 @@
             </div>
         </div>
         <!-- END : End Main Content-->
-
-        <!-- BEGIN : Footer-->
-        <footer class="footer footer-static footer-light">
-            <p class="clearfix text-muted text-sm-center px-2"><span>Copyright &copy; 2021 <a
-                        href="https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" id="pixinventLink"
-                        target="_blank" class="text-bold-800 primary darken-2">Team 26 </a>, All rights
-                    reserved. </span></p>
-        </footer>
-        <!-- End : Footer-->
-
     </div>
 </div>
 </div>

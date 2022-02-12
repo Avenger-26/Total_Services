@@ -6,7 +6,7 @@
         <div class="main-content">
             <div class="content-wrapper">
                 <div class="row justify-content-md-center">
-                    <div class="col-md-8 col-sm-11 mx-auto">
+                    <div class="col-md-11 col-sm-11 mx-auto">
                         <div class="card shadow">
                             <div class="card-header">
                                 <h4 class="card-title text-center" style="font-size:28px; font-weight:bolder"

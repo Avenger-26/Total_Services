@@ -17,7 +17,8 @@
         <!-- ================================== Main Container ===================================== -->
         <div class="container-lp">
             <div class="img-lp">
-                <img src="{{ asset('assets\img\login.png') }}">
+                <img src="{{ asset('assets\img\loginpage\img\lp-1.svg') }}"
+                    style="filter: drop-shadow(0px 0px  4px black);">
             </div>
             <!-- ============================== Login Content ===================================== -->
             <div class="login-content-lp">

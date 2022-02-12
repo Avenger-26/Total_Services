@@ -59,9 +59,8 @@
                 </div>
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0" style="color: #fff">
                     &copy; 2022 <a class="border-bottom" href="#">VS HOME SERVICES</a>, All Right Reserved.
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">IBM Avengers</a><br><br>
-                    Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">IBM
-                        Avengers</a>
+                    Designed and Developed By <a class="border-bottom" href="#">IBM Avengers</a>
+
                 </div>
             </div>
         </div>
@@ -86,7 +85,6 @@
 <script type="text/javascript" src="{{ url('assets/js/bootstrap3-typeahead.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/main.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/slick.min.js') }}"></script>
-
 <script type="text/javascript" src="{{ url('assets/js/owl.carousel.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('assets/js/purecounter.js') }}"></script>
 <script type="text/javascript">

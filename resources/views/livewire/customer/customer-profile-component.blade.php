@@ -7,7 +7,7 @@
                 <!--Basic User Details Starts-->
                 <section id="user-profile">
                     <div class="row">
-                        <div class="col-md-10 col-sm-11 mx-auto">
+                        <div class="col-md-11 col-sm-11 mx-auto">
                             <div class="card shadow profile-with-cover">
                                 <div class="card-img-top img-fluid bg-cover height-300"
                                     style="background: url({{ asset('app-assets/img/photos/15.jpg') }}) 50%;"></div>
@@ -15,7 +15,8 @@
                                     <div class="col-5">
                                         <div class="align-self-start halfway-fab pl-3 pt-2">
                                             <div class="text-left">
-                                                <h3 class="card-title white">{{ Auth::user()->name }}</h3>
+                                                <h3 class="card-title white"><i
+                                                        class="ft-user mr-2"></i>{{ Auth::user()->name }}</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -52,8 +53,8 @@
                                         <div class="col-lg-5 col-md-5">
                                             <ul class="profile-menu no-list-style">
                                                 <li>
-                                                    <a href="#about"
-                                                        class="primary font-medium-2 font-weight-600">About</a>
+                                                    <a href="#about" class="primary font-medium-2 font-weight-600"><i
+                                                            class="ft-user mr-2"></i>About</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -66,7 +67,9 @@
                                             <ul class="profile-menu no-list-style">
                                                 <li>
                                                     <a href="{{ route('customer.edit_profile') }}"
-                                                        class="primary font-medium-2 font-weight-600">Edit
+                                                        class="primary font-medium-2 font-weight-600">
+                                                        <i class="ft-edit mr-2"></i>
+                                                        Edit
                                                         Profile</a>
                                                 </li>
                                             </ul>
@@ -82,7 +85,7 @@
                 <section id="about">
 
                     <div class="row">
-                        <div class="col-md-10 col-sm-11 mx-auto ">
+                        <div class="col-md-11 col-sm-11 mx-auto ">
                             <div class="card shadow">
                                 <div class="card-header">
                                     <h5 class="card-title white">Personal Information</h5>

@@ -24,7 +24,7 @@ class AdminEditServiceComponent extends Component
     public $description;
     public $inclusion;
     public $exclusion;
-    
+
     public $newimage;
     public $newthumbnail;
     public $service_id;
@@ -54,7 +54,7 @@ class AdminEditServiceComponent extends Component
     {
         $this->slug = Str::slug($this->name, '-');
     }
-    
+
     public function updated($feilds)
     {
         $this->validateOnly($feilds, [
@@ -114,26 +114,26 @@ class AdminEditServiceComponent extends Component
         $service->description = $this->description;
         $service->inclusion = str_replace("\n",'|',trim($this->inclusion));
         $service->exclusion = str_replace("\n",'|',trim($this->exclusion));
-        
+
         if ($this->newthumbnail) {
             // unlink('images/services/thumbnails'.'/'.$service->thumbnail);
             $imageName = Carbon::now()->timestamp . '.' . $this->newthumbnail->getClientOriginalName();
-            $this->newthumbnail->storeAs('services/thumbnails', $imageName);
+            $this->newthumbnail->storeAs('services/thumbnails', $imageName, 'uploads');
             $service->thumbnail = $imageName;
         }
-        
+
         if ($this->newimage) {
             // unlink('images/services'.'/'.$service->image);
             $imageName2 = Carbon::now()->timestamp . '.' . $this->newimage->getClientOriginalName();
-            $this->newimage->storeAs('services', $imageName2);
+            $this->newimage->storeAs('services', $imageName2, 'uploads');
             $service->image = $imageName2;
         }
-        
+
 
         $service->save();
         session()->flash('message','Service has been updated successfully!');
     }
-   
+
     public function render()
     {
         $categories = ServiceCategory::all();

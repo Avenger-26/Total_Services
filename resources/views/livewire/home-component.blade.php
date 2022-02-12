@@ -178,15 +178,15 @@
 
                 <section id="clients" class="clients">
                     <div class="container">
-                        <div class="owl-carousel owl-theme" id="client">
+                        <div class="owl-carousel owl-theme " id="client">
                             @foreach ($scategories as $scategory)
                                 <div class="item owl-item-slider tooltip-hover" data-aos="fade-down">
                                     <a href="{{ route('home.services_by_category', ['category_slug' => $scategory->slug]) }}"><img
                                             src="{{ asset('images/services-categories') }}/{{ $scategory->image }}"
                                             alt="{{ $scategory->name }}" data-toggle="tooltip" title="" data-original-title="{{ $scategory->name }}" ></a>
-                                    
+
                                 </div>
-                                
+
                             @endforeach
                         </div>
                     </div>
@@ -442,7 +442,6 @@
                                                             </div>
                                                         </a>
                                                     </div>
-
                                                 @endforeach
                                             </div>
                                             <div id="slick-nav-2" class="products-slick-nav-2"></div>
@@ -533,7 +532,6 @@
                                         <img class="img-fluid flex-shrink-0 rounded-circle"
                                             src="{{ asset('images/sproviders/default.png') }}"
                                             style="width: 65px; height: 65px;">
-
                                     @endif
                                     <div class="ps-4">
                                         <h5 class="mb-1">{{ $testimonial_item->name }}</h5>

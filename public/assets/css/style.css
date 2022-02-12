@@ -842,7 +842,7 @@ hr.tall {
 /* Filter Title ------------------------------*/
 .filter-title {
     position: absolute;
-    top: 36%;
+    top: 40%;
     left: 50%;
     margin-left: -25%;
     width: 50%;
@@ -5095,7 +5095,7 @@ i.fa-truck {
     }
 
     .filter-title {
-        top: 25% !important;
+        top: 50% !important;
     }
 
     .tparrows.preview1,
@@ -5122,7 +5122,7 @@ i.fa-truck {
 
 @media (min-width: 768px) and (max-width: 1500px) {
     .filter-title {
-        top: 12% !important;
+        top: 25% !important;
     }
 
     .filter-header input[type="text"] {

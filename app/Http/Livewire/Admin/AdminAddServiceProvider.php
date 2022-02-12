@@ -28,24 +28,13 @@ class AdminAddServiceProvider extends Component
 
     public function addServiceProvider()
     {
-
-        // $this->validate([
-        //     'name' => 'required',
-        //     'email' => 'required',
-        //     'password' => 'required',
-        //     'image' => 'required|mimes:jpeg,png,jpg',
-        //     'phone' => 'required',
-        //     'gender' => 'required',
-        //     'address' => 'required',
-        //     'service_category_id' => 'required',
-        // ]);
         $sproviders = new User();
         $sproviders->name = $this->name;
         $sproviders->email = $this->email;
         $sproviders->password = Hash::make($this->password);
         if ($this->newimage) {
             $imageName = Carbon::now()->timestamp . '.' . $this->newimage->getClientOriginalName();
-            $this->newimage->storeAs('sproviders', $imageName);
+            $this->newimage->storeAs('sproviders', $imageName, 'uploads');
             $sproviders->image = $imageName;
         }
         $sproviders->phone = $this->phone;
@@ -62,6 +51,6 @@ class AdminAddServiceProvider extends Component
     {
         $scategories = ServiceCategory::all();
         return view('livewire.admin.admin-add-service-provider', ['scategories' => $scategories])->layout('FrontEnd.layouts.guest');
-        
+
     }
 }

@@ -33,7 +33,8 @@
                                                 });
                                             </script>
                                         @endif
-                                        <table class="table text-center table-responsive table-striped table-hover shadow">
+                                        <table
+                                            class="table text-center table-responsive table-striped table-hover shadow">
                                             <thead>
                                                 <tr>
                                                     <th>#</th>
@@ -90,9 +91,9 @@
                                                 @endif
                                             </tbody>
                                         </table>
-                                       
-                                            {{ $services->links('pagination.custom') }}
-                                
+
+                                        {{ $services->links('pagination.custom') }}
+
 
 
                                     </div>
@@ -105,9 +106,6 @@
             </div>
         </div>
         <!-- END : End Main Content-->
-
-        
-
     </div>
 </div>
 <style>
@@ -123,18 +121,24 @@
             title: event.detail.title,
             text: event.detail.text,
             icon: event.detail.type,
-            buttons: true,
-            dangerMode: true,
             showCancelButton: event.detail.showCancelButton,
             confirmButtonColor: event.detail.confirmButtonColor,
             cancelButtonColor: event.detail.cancelButtonColor,
-            confirmButtonText: event.detail.confirmButtonText,
-        }).then((willDelete) => {
-            if (willDelete) {
 
-                window.livewire.emit('delete', event.detail.id);
+        }).then((result) => {
+            if (result.isConfirmed) {
 
+                window.livewire.emit('delete', event.detail.id)
+            } else if (
+
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                Swal.fire(
+                    'Cancelled',
+                    'Your Data is safe ',
+                    'error'
+                );
             }
-        });
+        })
     });
 </script>

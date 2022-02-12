@@ -21,7 +21,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="card-content">
                                     @if (Session::has('message'))
                                         <script>

@@ -1,12 +1,4 @@
-{{-- <style>
-    table td{
-        line-height:80px;
-    }
-
-</style> --}}
-
 <div>
-    <!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
     @include('../../layouts/admin/header')
     <div class="main-panel">
         <!-- BEGIN : Main Content-->
@@ -82,8 +74,6 @@
                                                         <td>{{ $sprovider->phone }}</td>
                                                         <td>{{ $sprovider->address }}</td>
                                                         <td>
-
-                                                            {{-- <a href="{{ route('admin.edit_service_categories', ['category_id' => $sprovider->id]) }}"><i class="ft-edit font-medium-5 mr-2"></i></a> --}}
                                                             <a type="button" title="Delete" class=""
                                                                 wire:click="deleteConfirm({{ $sprovider->id }})"><i
                                                                     class="ft-trash-2 fa-2x mr-2  text-danger"></i></a>
@@ -96,7 +86,8 @@
                                         {{ $sproviders->links('pagination.custom') }}
                                         <div class="Export-btn">
                                             <a href="{{ route('admin.export_service_provider') }}"
-                                                class="btn-success btn pull-left ml-2">Export Data</a>
+                                                class="btn-success btn pull-left ml-2">Export Data <i
+                                                    class="fa fa-file-excel-o" aria-hidden="true"></i></a>
                                         </div>
 
                                     </div>
@@ -109,8 +100,6 @@
             </div>
         </div>
         <!-- END : End Main Content-->
-
-
     </div>
 </div>
 <style>
@@ -127,18 +116,24 @@
             title: event.detail.title,
             text: event.detail.text,
             icon: event.detail.type,
-            buttons: true,
-            dangerMode: true,
             showCancelButton: event.detail.showCancelButton,
             confirmButtonColor: event.detail.confirmButtonColor,
             cancelButtonColor: event.detail.cancelButtonColor,
-            confirmButtonText: event.detail.confirmButtonText,
-        }).then((willDelete) => {
-            if (willDelete) {
 
-                window.livewire.emit('delete', event.detail.id);
+        }).then((result) => {
+            if (result.isConfirmed) {
 
+                window.livewire.emit('delete', event.detail.id)
+            } else if (
+
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                Swal.fire(
+                    'Cancelled',
+                    'Your Data is safe ',
+                    'error'
+                );
             }
-        });
+        })
     });
 </script>
