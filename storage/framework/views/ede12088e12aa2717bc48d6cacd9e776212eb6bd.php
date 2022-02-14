@@ -1,5 +1,5 @@
 <div>
-    @include('../layouts/customer/header')
+    <?php echo $__env->make('../layouts/customer/header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <div class="main-panel">
         <!-- BEGIN : Main Content-->
         <div class="main-content">
@@ -7,30 +7,29 @@
                 <!--Basic User Details Starts-->
                 <section id="user-profile">
                     <div class="row">
-                        <div class="col-md-11 col-sm-11 mx-auto">
+                        <div class="col-md-10 col-sm-11 mx-auto">
                             <div class="card shadow profile-with-cover">
                                 <div class="card-img-top img-fluid bg-cover height-300"
-                                    style="background: url({{ asset('app-assets/img/photos/15.jpg') }}) 50%;"></div>
+                                    style="background: url(<?php echo e(asset('app-assets/img/photos/15.jpg')); ?>) 50%;"></div>
                                 <div class="media profil-cover-details row">
                                     <div class="col-5">
                                         <div class="align-self-start halfway-fab pl-3 pt-2">
                                             <div class="text-left">
-                                                <h3 class="card-title white"><i
-                                                        class="ft-user mr-2"></i>{{ Auth::user()->name }}</h3>
+                                                <h3 class="card-title white"><?php echo e(Auth::user()->name); ?></h3>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="align-self-center halfway-fab text-center">
                                             <a class="profile-image">
-                                                @if ($scustomer->image)
-                                                    <img src="{{ asset('images/customer') }}/{{ $scustomer->image }}"
+                                                <?php if($scustomer->image): ?>
+                                                    <img src="<?php echo e(asset('images/customer')); ?>/<?php echo e($scustomer->image); ?>"
                                                         alt="" width="100" height="100"
                                                         class="rounded-circle img-border gradient-summer">
-                                                @else
-                                                    <img src="{{ asset('images/sproviders/default.jpg') }}" alt=""
+                                                <?php else: ?>
+                                                    <img src="<?php echo e(asset('images/sproviders/default.jpg')); ?>" alt=""
                                                         class="rounded-circle img-border gradient-summer width-100">
-                                                @endif
+                                                <?php endif; ?>
                                             </a>
                                         </div>
                                     </div>
@@ -53,23 +52,22 @@
                                         <div class="col-lg-5 col-md-5">
                                             <ul class="profile-menu no-list-style">
                                                 <li>
-                                                    <a href="#about" class="primary font-medium-2 font-weight-600"><i
-                                                            class="ft-user mr-2"></i>About</a>
+                                                    <a href="#about"
+                                                        class="primary font-medium-2 font-weight-600">About</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="col-lg-2 col-md-2 text-center">
-                                            <span class="card-title white text-uppercase">{{ Auth::user()->name }}
+                                            <span class="card-title white text-uppercase"><?php echo e(Auth::user()->name); ?>
+
                                             </span>
 
                                         </div>
                                         <div class="col-lg-5 col-md-5">
                                             <ul class="profile-menu no-list-style">
                                                 <li>
-                                                    <a href="{{ route('customer.edit_profile') }}"
-                                                        class="primary font-medium-2 font-weight-600">
-                                                        <i class="ft-edit mr-2"></i>
-                                                        Edit
+                                                    <a href="<?php echo e(route('customer.edit_profile')); ?>"
+                                                        class="primary font-medium-2 font-weight-600">Edit
                                                         Profile</a>
                                                 </li>
                                             </ul>
@@ -85,7 +83,7 @@
                 <section id="about">
 
                     <div class="row">
-                        <div class="col-md-11 col-sm-11 mx-auto ">
+                        <div class="col-md-10 col-sm-11 mx-auto ">
                             <div class="card shadow">
                                 <div class="card-header">
                                     <h5 class="card-title white">Personal Information</h5>
@@ -100,7 +98,7 @@
                                                         <span class="text-bold-500 primary"><a><i
                                                                     class="ft-mail font-small-3"></i> Email:</a></span>
                                                         <span
-                                                            class="d-block overflow-hidden white">{{ Auth::user()->email }}</span>
+                                                            class="d-block overflow-hidden white"><?php echo e(Auth::user()->email); ?></span>
                                                     </li>
 
                                                 </ul>
@@ -112,7 +110,7 @@
                                                                     class="ft-smartphone font-small-3"></i> Phone
                                                                 Number:</a></span>
                                                         <a
-                                                            class="d-block overflow-hidden white">{{ $scustomer->phone }}</a>
+                                                            class="d-block overflow-hidden white"><?php echo e($scustomer->phone); ?></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -123,7 +121,7 @@
                                                                     class="ft-globe font-small-3"></i> Address
                                                                 :</a></span>
                                                         <span
-                                                            class="d-block overflow-hidden white">{{ $scustomer->address }}</span>
+                                                            class="d-block overflow-hidden white"><?php echo e($scustomer->address); ?></span>
                                                     </li>
 
                                                 </ul>
@@ -145,3 +143,4 @@
     </div>
 </div>
 </div>
+<?php /**PATH C:\Users\cws\Documents\Master Laravel Project\Total-Services\resources\views/livewire/customer/customer-profile-component.blade.php ENDPATH**/ ?>
