@@ -27,7 +27,7 @@
             <div class="content-wrapper">
                 <!--Statistics cards Starts-->
                 <div class="row">
-                    <div class="col-md-6 col-sm-11 h-100">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
                         <div class="card gradient-blackberry dynamic-cards shadow">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
@@ -48,7 +48,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-sm-11 h-100">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
                         <div class="card gradient-ibiza-sunset dynamic-cards shadow"
                             wire:click="location.href='/admin/service-provider'">
                             <div class="card-content">
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-11 h-100">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
                         <div class="card gradient-green-tea shadow dynamic-cards">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
@@ -91,7 +91,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-sm-11 h-100">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-12">
                         <div class="card gradient-pomegranate shadow dynamic-cards">
                             <div class="card-content">
                                 <div class="card-body pt-2 pb-0">
@@ -306,7 +306,7 @@
                                                 <td>
                                                     @if ($sprovider->image)
                                                         <img src="{{ asset('images/sproviders') }}/{{ $sprovider->image }}"
-                                                            width="80" height="80" alt=""
+                                                            width="60" height="60" alt=""
                                                             class="rounded-circle img-border gradient-summer">
 
                                                     @else
