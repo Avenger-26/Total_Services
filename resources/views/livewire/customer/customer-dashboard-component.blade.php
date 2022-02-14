@@ -20,7 +20,15 @@
             <div class="content-wrapper">
                 <div class="row">
 
-
+                    @if (Session::has('message'))
+                        <script>
+                            Swal.fire({
+                                icon: 'success',
+                                title: "{!! Session::get('message') !!}",
+                                text: 'Great Job!',
+                            });
+                        </script>
+                    @endif
                     <div class="col-xl-3 col-lg-6 col-md-6 col-12">
                         <div class="card gradient-blackberry   dynamic-cards shadow">
                             <div class="card-content">
@@ -92,7 +100,7 @@
                                             @if ($paytm->user_id === Auth::user()->id)
                                                 <tr>
                                                     <td><span
-                                                            class="badge badge-success mt-2 ">#BH0{{ $paytm->id }}</span>
+                                                            class="badge badge-success  ">#BH0{{ $paytm->id }}</span>
                                                     </td>
 
                                                     <td>{{ $paytm->slug_name }}</td>
@@ -101,11 +109,11 @@
                                                     <td>{{ $paytm->price }}</td>
                                                     <td>{{ $paytm->created_at }}</td>
                                                     <td>
-                                                        <a href="#"
-                                                            onclick="confirm('Are you sure, you want to delete this booking histroy!')||event.stopImmediatePropagation()"
-                                                            wire:click.prevent="deleteService({{ $paytm->id }})">
-                                                            <i class="ft-trash-2 text-danger font-medium-3"></i>
-                                                        </a>
+
+
+                                                        <a type="button" title="Cancel" class=""
+                                                            wire:click="deleteConfirm({{ $paytm->id }})"><i
+                                                                class="ft-x fa-2x mr-2  text-danger"></i></a>
                                                     </td>
                                                 </tr>
                                             @endif
@@ -125,3 +133,30 @@
     </div>
 </div>
 </div>
+<script>
+    window.addEventListener('Swal.fire:confirm', event => {
+        Swal.fire({
+            title: event.detail.title,
+            text: event.detail.text,
+            icon: event.detail.type,
+            showCancelButton: event.detail.showCancelButton,
+            confirmButtonColor: event.detail.confirmButtonColor,
+            cancelButtonColor: event.detail.cancelButtonColor,
+
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                window.livewire.emit('delete', event.detail.id)
+            } else if (
+
+                result.dismiss === Swal.DismissReason.cancel
+            ) {
+                Swal.fire(
+                    'Cancelled',
+                    'Your Booked Service is safe ',
+                    'error'
+                );
+            }
+        })
+    });
+</script>

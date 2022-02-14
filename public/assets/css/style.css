@@ -5119,8 +5119,11 @@ i.fa-truck {
         width: 49%;
     }
 }
-
-@media (min-width: 768px) and (max-width: 1500px) {
+@media   (min-width: 1401px) {
+    .filter-title {
+        top: 25% !important;
+    }
+@media (min-width: 768px) and (max-width: 1400px) {
     .filter-title {
         top: 25% !important;
     }
@@ -5130,6 +5133,11 @@ i.fa-truck {
     }
 }
 
+@media (min-width: 1500px) {
+    .filter-header input[type="text"] {
+        min-width: 340px !important;
+    }
+}
 @media (min-width: 481px) and (max-width: 767px) {
     .filter-header input[type="text"] {
         min-width: 340px !important;

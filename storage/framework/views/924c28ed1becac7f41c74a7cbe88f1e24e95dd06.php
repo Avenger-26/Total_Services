@@ -34,7 +34,7 @@
                                         <div class="products-slick" data-nav="#slick-nav-3">
                                             <?php if($scategory->services->count() > 0): ?>
                                                 <?php $__currentLoopData = $scategory->services; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                    <div class="product">
+                                                    <div class="product" data-aos="zoom-in">
                                                         <a
                                                             href="<?php echo e(route('home.service_details', ['service_slug' => $service->slug])); ?>">
                                                             <div class="product-img tb">
@@ -58,7 +58,7 @@
                                                                     </div>
                                                             </div>
                                                             <div class="add-to-cart">
-                                                                <button class="add-to-cart-btn">
+                                                                <button class="add-to-cart-btn btn-hover color-hover" style="margin-top: -0.2px">
                                                                     <a
                                                                         href="<?php echo e(route('home.service_details', ['service_slug' => $service->slug])); ?>"><i
                                                                             class="fa fa-shopping-cart"></i> Book

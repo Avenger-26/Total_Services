@@ -1,10 +1,15 @@
-<x-guest-layout>
+<?php if (isset($component)) { $__componentOriginalc3251b308c33b100480ddc8862d4f9c79f6df015 = $component; } ?>
+<?php $component = $__env->getContainer()->make(App\View\Components\GuestLayout::class, []); ?>
+<?php $component->withName('guest-layout'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes([]); ?>
     <!DOCTYPE html>
     <html>
 
     <head>
         <title>Login Page</title>
-        <link rel="stylesheet" type="text/css" href="{{ asset('css\style.css') }}">
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css\style.css')); ?>">
         <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/a81368914c.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +17,7 @@
 
     <body>
         <!-- ========== Background Image ======= -->
-        <img class="wave" src="{{ asset('assets\img\loginpage\img\wave_1.png') }}">
+        <img class="wave" src="<?php echo e(asset('assets\img\loginpage\img\wave_1.png')); ?>">
 
 
         <!-- ========== Background Image ======= -->
@@ -21,7 +26,7 @@
 
             <div class="img-lp">
              
-                <img src="{{ asset('assets\img\loginpage\img\lp-1.svg') }}"
+                <img src="<?php echo e(asset('assets\img\loginpage\img\lp-1.svg')); ?>"
                     style="filter: drop-shadow(0px 0px  4px black);">
 
 
@@ -31,18 +36,29 @@
             <div class="login-content-lp">
 
 
-                <form method="POST" action="{{ route('login') }}">
-                    @csrf
+                <form method="POST" action="<?php echo e(route('login')); ?>">
+                    <?php echo csrf_field(); ?>
 
-                    <img src="{{ asset('https://cdn-icons-png.flaticon.com/512/1995/1995670.png') }}"
+                    <img src="<?php echo e(asset('https://cdn-icons-png.flaticon.com/512/1995/1995670.png')); ?>"
                         style="filter: drop-shadow(0px 0px 3px black);">
                     <h2 class="title">Login</h2>
-                    <x-jet-validation-errors />
-                    @if (session('status'))
+                    <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
+<?php $component = $__env->getContainer()->make(Illuminate\View\AnonymousComponent::class, ['view' => 'jetstream::components.validation-errors','data' => []]); ?>
+<?php $component->withName('jet-validation-errors'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes([]); ?>
+<?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
+<?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
+<?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
+<?php endif; ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+                    <?php if(session('status')): ?>
                         <div class="font-medium text-md text-green-600">
-                            <h6 style="color: #1597e5; text-align:center">{{ session('status') }}</h6>
+                            <h6 style="color: #1597e5; text-align:center"><?php echo e(session('status')); ?></h6>
                         </div>
-                    @endif
+                    <?php endif; ?>
                     <div class="input-div one">
                         <div class="i-lp">
                             <i class="fas fa-envelope"></i>
@@ -73,7 +89,7 @@
                         <!-- ============================Remember Me =========================  -->
                         <!-- ============================Forgot Password =========================  -->
                         <div class="forgot-p">
-                            <a href="{{ route('password.request') }}">Forgot Password?</a>
+                            <a href="<?php echo e(route('password.request')); ?>">Forgot Password?</a>
                         </div>
                         <!-- ============================Forgot Password =========================  -->
                     </div>
@@ -82,7 +98,7 @@
                     <!-- ================ Redirect on Registration page ===================== -->
                     <div class="">
                         <span class="span-r"> Not a member?
-                            <a href="{{ route('register') }}">Sign up now!</a>
+                            <a href="<?php echo e(route('register')); ?>">Sign up now!</a>
                         </span>
                     </div>
                     <span class="span-r">
@@ -97,11 +113,17 @@
         </div>
         <!-- ================================ Login Container ====================================== -->
         <!-- ================== Script of page =========================== -->
-        <script type="text/javascript" src="{{ asset('assets\js\login\main.js') }}"></script>
+        <script type="text/javascript" src="<?php echo e(asset('assets\js\login\main.js')); ?>"></script>
         <script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
-        <script type="text/javascript" src="{{ url('js/alan.js') }}"></script>
+        <script type="text/javascript" src="<?php echo e(url('js/alan.js')); ?>"></script>
         <!-- ================== Script of page =========================== -->
     </body>
 
     </html>
-</x-guest-layout>
+ <?php if (isset($__componentOriginalc3251b308c33b100480ddc8862d4f9c79f6df015)): ?>
+<?php $component = $__componentOriginalc3251b308c33b100480ddc8862d4f9c79f6df015; ?>
+<?php unset($__componentOriginalc3251b308c33b100480ddc8862d4f9c79f6df015); ?>
+<?php endif; ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php /**PATH D:\backupdata\master\testing\Total_Services\resources\views/auth/login.blade.php ENDPATH**/ ?>

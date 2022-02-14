@@ -1,18 +1,12 @@
-<link rel="stylesheet" href="<?php echo e(asset('assets/css/border.css')); ?>">
-
 <head>
-    <title>Customer Dashboard</title>
+    <title>Service Provider Dashboar</title>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 </head>
-
-<!-- main menu-->
-<!--.main-menu(class="#{menuColor} #{menuOpenType}", class=(menuShadow == true ? 'menu-shadow' : ''))-->
 <div data-active-color="white" data-background-color="black"
-    data-image="<?php echo e(asset('app-assets/img/sidebar-bg/01.jpg')); ?>" class="app-sidebar ">
+    data-image="<?php echo e(asset('app-assets/img/sidebar-bg/01.jpg')); ?>" class="app-sidebar">
     <!-- main menu header-->
     <!-- Sidebar Header starts-->
-    <div class="sidebar-header ">
+    <div class="sidebar-header">
         <div class="logo clearfix"><a href="/" class="text-white">
                 <div class="logo-img ">
                     <h4>VS Home Services</h4>
@@ -27,33 +21,35 @@
     <!-- Sidebar Header Ends-->
     <!-- / main menu header-->
     <!-- main menu content-->
-    <div class="sidebar-content ps-container ps-theme-default" data-ps-id="5a4496f6-ef67-cc67-9c20-741d272c4ef2">
+    <div class="sidebar-content">
         <div class="nav-container">
             <ul id="main-menu-navigation" data-menu="menu-navigation" data-scroll-to-active="true"
                 class="navigation navigation-main">
-                <li class=" nav-item"><a href="<?php echo e(route('customer.dashboard')); ?>" class=""><i
-                            class="ft-home"></i><span data-i18n="" class="">Dashboard</span></a>
+                <li class=" nav-item"><a href="<?php echo e(route('sprovider.dashboard')); ?>"><i
+                            class="ft-home"></i><span data-i18n="" class="menu-title">Dashboard</span></a>
                 </li>
-                <li class=" nav-item"><a href="<?php echo e(route('customer.profile')); ?>"><i
-                            class="ft-user mr-2"></i><span data-i18n="" class="">
+                <li class=" nav-item"><a href="<?php echo e(route('sprovider.profile')); ?>"><i
+                            class="ft-user mr-2"></i><span data-i18n="" class="menu-title">
                             Profile</span></a>
                 </li>
-                <li class=" nav-item"><a href="<?php echo e(route('customer.edit_profile')); ?>"><i
-                            class="ft-edit mr-2"></i><span data-i18n="" class="">Edit
+                <li class=" nav-item"><a href="<?php echo e(route('sprovider.edit_profile')); ?>"><i
+                            class="ft-edit mr-2"></i><span data-i18n="" class="menu-title">Edit
                             Profile</span></a>
                 </li>
-                <li class=" nav-item"><a href="<?php echo e(route('customer.changepassword')); ?>">
+                <li class=" nav-item"><a href="<?php echo e(route('sprovider.all_services')); ?>"><i
+                            class="
+                    ft-grid mr-2"></i><span data-i18n="" class="menu-title">All
+                            Services
+                        </span></a>
+                </li>
+                <li class=" nav-item"><a href="<?php echo e(route('sprovider.changepassword')); ?>">
 
-                        <i class="fa fa-key"></i><span data-i18n="" class="">Change
+                        <i class="fa fa-key"></i><span data-i18n="" class="menu-title">Change
                             Password</span></a>
-                </li>
-                <li class=" nav-item"><a href="<?php echo e(route('customer.feedback')); ?>">
-
-                        <i class="fa fa-comments"></i><span data-i18n="" class="">Feedback</span></a>
                 </li>
                 <li class=" nav-item"><a href="<?php echo e(route('logout')); ?>"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
-                            class="ft-power mr-2"></i><span data-i18n="" class="">Logout</span></a>
+                            class="ft-power mr-2"></i><span data-i18n="" class="menu-title">Logout</span></a>
                 </li>
                 </li>
             </ul>
@@ -80,9 +76,9 @@
                     </ul>
                 </li>
             <?php else: ?>
-                <li class="login-form"><a href="" title="Register">My Account( customer )</a>
+                <li class="login-form"><a href="" title="Register">My Account( Costumer )</a>
                     <ul class="drop-down one-column hover-fade">
-                        <li><a href="<?php echo e(route('customer.dashboard')); ?>">Dasboard</a></li>
+                        <li><a href="<?php echo e(route('costumer.dashboard')); ?>">Dasboard</a></li>
                         <li><a href="<?php echo e(route('logout')); ?>"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                         </li>
@@ -105,21 +101,24 @@
     <!-- Navbar (Header) Starts-->
     <nav class="navbar navbar-expand-lg navbar-light bg-faded header-navbar">
         <div class="container-fluid">
+
             <div class="navbar-header">
-                <h5 class="text-center mt-4 ml-md-5 text-info font-weight-bolder">User Dashboard</h5>
+                <h5 class="text-center mt-4 ml-md-5 text-info font-weight-bolder">Service Provider Dashboard</h5>
                 <button type="button" data-toggle="collapse" class="navbar-toggle d-lg-none float-left"><span
                         class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
                         class="icon-bar"></span><span class="icon-bar"></span></button><span
                     class="d-lg-none navbar-right navbar-collapse-toggle"><a aria-controls="navbarSupportedContent"
                         href="javascript:;" class="open-navbar-container black"><i class="ft-more-vertical"></i></a></span>
 
+                <div>
+
+                </div>
+
+
             </div>
-
-
             <div class="navbar-container">
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav">
-
                         <li class="nav-item mr-2 d-none d-lg-block"><a id="navbar-fullscreen" href="javascript:;"
                                 class="nav-link apptogglefullscreen"><i
                                     class="ft-maximize font-medium-3 blue-grey darken-4"></i>
@@ -133,7 +132,7 @@
                             </a>
                             <div ngbdropdownmenu="" aria-labelledby="dropdownBasic3"
                                 class="dropdown-menu text-left dropdown-menu-right"><a
-                                    href="<?php echo e(route('customer.edit_profile')); ?>" class="dropdown-item py-1"><i
+                                    href="<?php echo e(route('sprovider.edit_profile')); ?>" class="dropdown-item py-1"><i
                                         class="ft-edit mr-2"></i><span>Edit
                                         Profile</span></a>
                                 <div class="dropdown-divider"></div><a href="<?php echo e(route('logout')); ?>"
@@ -147,4 +146,4 @@
         </div>
     </nav>
     <!-- Navbar (Header) Ends-->
-<?php /**PATH C:\Users\Shah\Videos\master\testing\Total_Services\resources\views////layouts/customer/header.blade.php ENDPATH**/ ?>
+<?php /**PATH D:\backupdata\master\testing\Total_Services\resources\views////layouts/sprovider/header.blade.php ENDPATH**/ ?>

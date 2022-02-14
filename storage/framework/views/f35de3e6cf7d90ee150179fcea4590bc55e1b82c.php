@@ -18,12 +18,19 @@
     <body>
         <!-- ========== Background Image ======= -->
         <img class="wave" src="<?php echo e(asset('assets\img\loginpage\img\wave_1.png')); ?>">
+
+
         <!-- ========== Background Image ======= -->
         <!-- ================================== Main Container ===================================== -->
         <div class="container-lp">
+
             <div class="img-lp">
+             
                 <img src="<?php echo e(asset('assets\img\loginpage\img\lp-1.svg')); ?>"
                     style="filter: drop-shadow(0px 0px  4px black);">
+
+
+
             </div>
             <!-- ============================== Login Content ===================================== -->
             <div class="login-content-lp">
@@ -31,6 +38,7 @@
 
                 <form method="POST" action="<?php echo e(route('login')); ?>">
                     <?php echo csrf_field(); ?>
+
                     <img src="<?php echo e(asset('https://cdn-icons-png.flaticon.com/512/1995/1995670.png')); ?>"
                         style="filter: drop-shadow(0px 0px 3px black);">
                     <h2 class="title">Login</h2>
@@ -106,6 +114,8 @@
         <!-- ================================ Login Container ====================================== -->
         <!-- ================== Script of page =========================== -->
         <script type="text/javascript" src="<?php echo e(asset('assets\js\login\main.js')); ?>"></script>
+        <script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+        <script type="text/javascript" src="<?php echo e(url('js/alan.js')); ?>"></script>
         <!-- ================== Script of page =========================== -->
     </body>
 

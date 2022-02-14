@@ -1,5 +1,3 @@
-
-
 <?php if (isset($component)) { $__componentOriginalc3251b308c33b100480ddc8862d4f9c79f6df015 = $component; } ?>
 <?php $component = $__env->getContainer()->make(App\View\Components\GuestLayout::class, []); ?>
 <?php $component->withName('guest-layout'); ?>
@@ -122,6 +120,8 @@
         <!-- ================== Script of page =========================== -->
         <script type="text/javascript" src="<?php echo e(asset('assets\js\login\main.js')); ?>"></script>
         <!-- ================== Script of page =========================== -->
+        <script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+        <script type="text/javascript" src="<?php echo e(url('js/alan.js')); ?>"></script>
     </body>
 
     </html>
